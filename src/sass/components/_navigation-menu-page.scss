@@ -1,0 +1,112 @@
+@use "../abstracts" as *;
+
+.nav {
+  font-size: toRem($font-size-128);
+  font-family: $navigation-font-family;
+  font-weight: $navigation-font-weight;
+  width: max(100vw, 100vw);
+  height: max(100vh, 100vh);
+
+  background-color: $body-background-color;
+  position: fixed;
+
+  top: 0px;
+  right: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, max-content);
+  gap: 10px;
+
+  align-content: center;
+  justify-items: center;
+  z-index: 100;
+
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+    height: max(100%, 100%);
+    border-radius: 0px;
+    background-color: $body-background-color;
+    border: none;
+    padding: 10px;
+    color: white;
+    transition: all 375ms ease;
+
+    &[data-nav-type="home"]:hover {
+      color: $color-neon-red;
+      text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+        0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-red, 0.5),
+        0 0 45px rgb($color-neon-red, 0.5);
+    }
+    &[data-nav-type="education"]:hover {
+      color: $color-neon-yellow;
+      text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+        0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-yellow, 0.5),
+        0 0 45px rgb($color-neon-yellow, 0.5);
+    }
+    &[data-nav-type="projects"]:hover {
+      color: $color-neon-orange;
+      text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+        0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-orange, 0.5),
+        0 0 45px rgb($color-neon-orange, 0.5);
+    }
+    &[data-nav-type="certificates"]:hover {
+      color: $color-neon-lime;
+      text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+        0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-lime, 0.5),
+        0 0 45px rgb($color-neon-lime, 0.5);
+    }
+  }
+  button:hover {
+    cursor: pointer;
+  }
+
+  // :nth-child(1) {
+  //   border-bottom-left-radius: 5px;
+  // }
+  // :last-child {
+  //   border-bottom-right-radius: 5px;
+  // }
+  .nav-home-button-active {
+    color: $color-neon-red;
+    text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+      0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-red, 0.5),
+      0 0 45px rgb($color-neon-red, 0.5);
+  }
+
+  .nav-education-button-active {
+    color: $color-neon-yellow;
+    text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+      0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-yellow, 0.5),
+      0 0 45px rgb($color-neon-yellow, 0.5);
+  }
+  .nav-projects-button-active {
+    color: $color-neon-orange;
+    text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+      0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-orange, 0.5),
+      0 0 45px rgb($color-neon-orange, 0.5);
+  }
+  .nav-certificates-button-active {
+    color: $color-neon-lime;
+    text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+      0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-lime, 0.5),
+      0 0 45px rgb($color-neon-lime, 0.5);
+  }
+}
+
+// .nav {
+//   --flex-column-gap: #{$navigation-gap};
+//   list-style: none;
+//   font-family: $navigation-font-family;
+//   font-weight: $navigation-font-weight;
+
+//   a {
+//     color: $navigation-color;
+//     text-decoration: $navigation-link-text-decoration;
+
+//     &:is(:hover, :focus) {
+//       color: $navigation-color-hover;
+//     }
+//   }
+// }

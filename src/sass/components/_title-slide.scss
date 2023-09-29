@@ -1,0 +1,117 @@
+@use "../abstracts/" as *;
+$portfolio-img-radius: 300px;
+//ring animation settings
+$ring-animation-duration: 10s;
+$ring-animation-name: ring-animation;
+$ring-animation-1-delay: 0s;
+$ring-animation-2-delay: 3.5s;
+$ring-animation-3-delay: 7s;
+$ring-animations-iteration-count: infinite;
+
+.portfolio-img {
+  width: max($portfolio-img-radius, $portfolio-img-radius);
+  height: max($portfolio-img-radius, $portfolio-img-radius);
+  border-radius: 50%;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+.name-text {
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  text-align: right;
+  padding-bottom: 40px;
+}
+.tech-stack-container {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+
+  height: max-content;
+}
+.tech-stack-title {
+  padding-right: 10px;
+  border-right: 2px solid white;
+}
+.code-platform-icon-list-container {
+  width: max-content;
+  max-width: max-content;
+  display: flex;
+  gap: 10px;
+  height: max-content;
+}
+.code-icon {
+  width: max(20px, 20px);
+  height: max(20px, 20px);
+  object-fit: cover;
+  margin: 0px 1.5px;
+}
+.portfolio-pic-container {
+  position: relative;
+  z-index: 1;
+}
+.glow-circle {
+  width: max(
+    calc($portfolio-img-radius + 50px),
+    calc($portfolio-img-radius + 50px)
+  );
+  height: max(
+    calc($portfolio-img-radius + 50px),
+    calc($portfolio-img-radius + 50px)
+  );
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  animation-name: $ring-animation-name;
+  animation-duration: $ring-animation-duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: both;
+  border: 4px solid;
+}
+
+.glow-circle-1 {
+  animation-delay: $ring-animation-1-delay;
+}
+.glow-circle-2 {
+  animation-delay: $ring-animation-2-delay;
+  animation-direction: alternate;
+}
+.glow-circle-3 {
+  animation-delay: $ring-animation-3-delay;
+}
+
+.star-canvas {
+  position: fixed;
+  z-index: 2;
+}
+
+@keyframes ring-animation {
+  0% {
+    border-radius: 68% 32% 67% 33% / 65% 21% 79% 35%;
+    border-color: $color-neon-blue;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    border-radius: 11% 89% 19% 81% / 88% 8% 92% 12%;
+    border-color: $color-neon-red;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    border-radius: 16% 84% 38% 62% / 24% 65% 35% 76%;
+    border-color: $color-neon-lime;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+//border-radius:71% 29% 55% 45% / 45% 30% 70% 55%
+//border-radius: 23% 77% 55% 45% / 69% 30% 70% 31% ;
+//border-radius: 86% 14% 69% 31% / 69% 30% 70% 31%
+// box-shadow: 0 0 4px rgb(#fff, 0.35), 0 0 8px $color-neon-lime,
+// 0 0 12px $color-neon-lime, 0 0 16px $color-neon-lime;
