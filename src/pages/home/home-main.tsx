@@ -6,7 +6,8 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../library/store/typescript-hooks";
-import TitleCard from "./title-card";
+// import TitleCard from "./title-card";
+import TitleCardVertical from "./title-card-vertical";
 
 const HomepageMain = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -25,21 +26,9 @@ const HomepageMain = (): JSX.Element => {
       </button>
 
       {navMenuActive && <NavMenu />}
-      {/* <button
-        style={{
-          width: "200px",
-          height: "50px",
-          position: "fixed",
-          top: "50px",
-          left: "50px",
-          zIndex: "100",
-        }}
-        onClick={triggerButton}
-      >
-        Trigger
-      </button> */}
 
-      <TitleCard />
+      {/* <TitleCard /> */}
+      <TitleCardVertical />
       <StarBackground />
     </>
   );

@@ -7,6 +7,76 @@ $ring-animation-1-delay: 0s;
 $ring-animation-2-delay: 3.5s;
 $ring-animation-3-delay: 7s;
 $ring-animations-iteration-count: infinite;
+.title-card-section-container {
+  width: max(100vw, 100vw);
+  height: max(100vh, 100vh);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-card-data-container {
+  display: flex;
+  gap: 10px;
+  height: max-content;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.title-card-text-container {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  background-color: transparent;
+}
+
+.title-card-name-container {
+  width: max-content;
+  height: max-content;
+  background-color: transparent;
+  display: flex;
+  gap: 5px;
+}
+.animated-text-container {
+  font-size: toRem($font-size-64);
+  width: max(15ch, 15ch);
+  height: max-content;
+  background-color: transparent;
+  display: flex;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.title-card-name,
+.title-card-last-name,
+.title-card-animated-text {
+  font-size: toRem($font-size-64);
+
+  color: white;
+}
+
+.flashing-typing-bar {
+  width: max(3px, 3px);
+  height: max(55px, 55px);
+  background-color: white;
+
+  animation-name: flashing-bar;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: both;
+}
+.title-card-last-name {
+  color: rgb(158, 158, 158);
+}
 
 .portfolio-img {
   width: max($portfolio-img-radius, $portfolio-img-radius);
@@ -31,6 +101,57 @@ $ring-animations-iteration-count: infinite;
 
   height: max-content;
 }
+
+.tech-stack-container-vertical,
+.languages-vertical-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: max-content;
+  height: max-content;
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+
+  transform: translateY(-50%);
+  justify-content: center;
+  align-items: center;
+}
+
+.tech-stack-container-vertical {
+  left: 20px;
+}
+.languages-vertical-container {
+  right: 20px;
+}
+
+.title-card-vertical-title {
+  width: max-content;
+  height: max-content;
+  line-height: toRem($font-size-16);
+  font-size: toRem($font-size-16);
+  padding: 0px;
+}
+
+.title-card-vertical-title-container,
+.code-platform-icon-list-container-vertical {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  height: max-content;
+  align-items: center;
+  justify-items: center;
+}
+.title-card-vertical-title-container {
+  gap: 5px;
+}
+.code-platform-icon-list-container-vertical {
+  gap: 10px;
+}
+.title-card-vertical-title-container {
+  border-bottom: 2px solid white;
+  padding-bottom: 20px;
+}
 .tech-stack-title {
   padding-right: 10px;
   border-right: 2px solid white;
@@ -51,6 +172,7 @@ $ring-animations-iteration-count: infinite;
 .portfolio-pic-container {
   position: relative;
   z-index: 1;
+  background-color: transparent;
 }
 .glow-circle {
   width: max(
@@ -115,3 +237,11 @@ $ring-animations-iteration-count: infinite;
 //border-radius: 86% 14% 69% 31% / 69% 30% 70% 31%
 // box-shadow: 0 0 4px rgb(#fff, 0.35), 0 0 8px $color-neon-lime,
 // 0 0 12px $color-neon-lime, 0 0 16px $color-neon-lime;
+@keyframes flashing-bar {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

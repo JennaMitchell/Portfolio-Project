@@ -10,7 +10,6 @@ import GithubIcon from "../../library/assets/icons/github.png";
 const TitleCard = (): JSX.Element => {
   return (
     <section className="full-window-centered grid-two-column-parent-container bg-transparent">
-      {/* <DotAnimationCreator /> */}
       <div className="card " data-card-type="title">
         <p className="ff-neon ts-neon-red fs-82  clr-neon-red name-text">
           Jenna Mitchell

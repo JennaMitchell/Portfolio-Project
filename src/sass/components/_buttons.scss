@@ -23,7 +23,7 @@
   position: relative;
   transition: all 0.3s;
 
-  &[data-nav-button-bar="one"] {
+  &[data-nav-button-bar="three"] {
     width: max(15px, 15px);
     border-top-right-radius: 2.5px;
     border-bottom-right-radius: 2.5px;
@@ -37,7 +37,7 @@
 .nav-button {
   position: fixed;
   top: min(10%, 30px);
-  left: min(10%, 30px);
+  right: min(10%, 30px);
 
   width: max-content;
   height: max-content;
@@ -49,18 +49,19 @@
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 10;
-  padding: 10px;
+  padding: 15px;
   border-radius: 50%;
+  transform: rotate(180deg);
 
   &:hover {
     background-color: rgb(45, 44, 44);
   }
-  &:hover > [data-nav-button-bar="one"] {
+  &:hover > [data-nav-button-bar="two"] {
     width: max(30px, 30px);
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
-  &:hover > [data-nav-button-bar="two"] {
+  &:hover > [data-nav-button-bar="three"] {
     width: max(30px, 30px);
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -71,10 +72,21 @@
   position: fixed;
   top: 20px;
   right: 20px;
+  z-index: 15;
   border-radius: 50%;
   width: max-content;
   height: max-content;
   color: white;
   font-size: 32px;
-  padding: 10px;
+  line-height: 32px;
+  padding: 10px 15px;
+  background-color: rgb(46, 46, 46);
+  border: none;
+  transition: all 0.5s;
+}
+.nav-menu-closing-button:hover {
+  background-color: rgb(0, 0, 0);
+  color: $color-neon-red;
+  text-shadow: 0 0 7px rgb(#fff, 0.35), 0 0 17px $color-neon-red,
+    0 0 22px $color-neon-red, 0 0 27px $color-neon-red;
 }

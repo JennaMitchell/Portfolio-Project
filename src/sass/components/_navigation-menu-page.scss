@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .nav {
-  font-size: toRem($font-size-128);
+  font-size: toRem($font-size-64);
   font-family: $navigation-font-family;
   font-weight: $navigation-font-weight;
   width: max(100vw, 100vw);
@@ -11,7 +11,7 @@
   position: fixed;
 
   top: 0px;
-  right: 20px;
+  right: 0px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, max-content);
@@ -21,18 +21,18 @@
   justify-items: center;
   z-index: 100;
 
-  button {
+  &-page-selection-button {
     font-family: inherit;
     font-size: inherit;
     width: 100%;
     height: max(100%, 100%);
     border-radius: 0px;
-    background-color: $body-background-color;
+    background-color: transparent;
     border: none;
     padding: 10px;
     color: white;
     transition: all 375ms ease;
-
+    z-index: 3;
     &[data-nav-type="home"]:hover {
       color: $color-neon-red;
       text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
@@ -93,6 +93,34 @@
       0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-lime, 0.5),
       0 0 45px rgb($color-neon-lime, 0.5);
   }
+}
+
+.background-nav-text {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: toRem($font-size-128);
+  line-height: toRem($font-size-128);
+  width: max-content;
+  height: max-content;
+
+  transition: all 0.5s;
+}
+.background-nav-text-animation-on {
+  transform: translate(-50%, -50%) scaleX(1);
+  opacity: 1;
+}
+.background-nav-text-animation-off {
+  transform: translate(-50%, -50%) scaleX(5);
+  opacity: 0;
+}
+.nav-background-blur {
+  width: max(100%, 100%);
+  height: max(100%, 100%);
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 // .nav {
