@@ -7,6 +7,7 @@ import {
   useAppSelector,
 } from "../../library/store/typescript-hooks";
 // import TitleCard from "./title-card";
+import NavMenuTransition from "../../components/nav/nav-menu-transition";
 import TitleCardVertical from "./title-card-vertical";
 
 const HomepageMain = (): JSX.Element => {
@@ -14,7 +15,7 @@ const HomepageMain = (): JSX.Element => {
   const navMenuActive = useAppSelector((state) => state.nav.navMenuActive);
 
   const navButtonClickHandler = () => {
-    dispatch(navStoreActions.setNavMenuActive(true));
+    dispatch(navStoreActions.setNavMenuAnimationDirection("in"));
   };
 
   return (
@@ -26,6 +27,7 @@ const HomepageMain = (): JSX.Element => {
       </button>
 
       {navMenuActive && <NavMenu />}
+      <NavMenuTransition />
 
       {/* <TitleCard /> */}
       <TitleCardVertical />

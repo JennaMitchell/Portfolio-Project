@@ -1,0 +1,43 @@
+@use "../abstracts/" as *;
+.nav-menu-transition-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: $body-background-color;
+  z-index: 1000;
+}
+
+.nav-menu-transition-cheveron-in {
+  width: max(300px, 300px);
+  background-color: red;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  transform: skew(-15deg);
+  animation: transitionIn 0.5s forwards;
+}
+
+.nav-menu-transition-cheveron-out {
+  width: max(300px, 300px);
+  background-color: red;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  transform: skew(15deg);
+  animation: transitionIn 0.5s backwards;
+}
+
+@keyframes transitionIn {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: calc(100% + 100px);
+  }
+}

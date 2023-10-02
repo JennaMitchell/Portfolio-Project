@@ -42,10 +42,27 @@ $ring-animations-iteration-count: infinite;
   background-color: transparent;
   display: flex;
   gap: 5px;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
+
+.completed-animated-text-container {
+  font-size: toRem($font-size-64);
+  width: max(18ch, 18ch);
+  height: max-content;
+  background-color: transparent;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .animated-text-container {
   font-size: toRem($font-size-64);
-  width: max(15ch, 15ch);
+  width: max(18ch, 18ch);
   height: max-content;
   background-color: transparent;
   display: flex;
@@ -54,10 +71,10 @@ $ring-animations-iteration-count: infinite;
   justify-content: center;
   position: relative;
 }
-.title-card-name,
-.title-card-last-name,
+
 .title-card-animated-text {
   font-size: toRem($font-size-64);
+  line-height: toRem($font-size-64);
 
   color: white;
 }
@@ -75,7 +92,16 @@ $ring-animations-iteration-count: infinite;
   animation-fill-mode: both;
 }
 .title-card-last-name {
+  font-size: toRem($font-size-82);
+  line-height: 74px;
   color: rgb(158, 158, 158);
+  height: max-content;
+  width: max-content;
+}
+.title-card-name {
+  font-size: toRem($font-size-64);
+  line-height: toRem($font-size-64);
+  color: white;
 }
 
 .portfolio-img {
@@ -162,6 +188,31 @@ $ring-animations-iteration-count: infinite;
   display: flex;
   gap: 10px;
   height: max-content;
+}
+
+.code-icon-button {
+  position: relative;
+  width: max-content;
+  height: max-content;
+
+  transition: all 0.5s;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+}
+.code-icon-button:hover {
+  background-color: rgba(112, 112, 112, 0.5);
+}
+.code-icon-link {
+  opacity: 0;
+  width: max(20px, 20px);
+  height: max(20px, 20px);
+  color: transparent;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .code-icon {
   width: max(20px, 20px);

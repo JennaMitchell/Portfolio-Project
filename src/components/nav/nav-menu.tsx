@@ -36,7 +36,7 @@ const NavMenu = (): JSX.Element => {
   };
 
   const closingButtonHandler = () => {
-    dispatch(navStoreActions.setNavMenuActive(false));
+    dispatch(navStoreActions.setNavMenuAnimationDirection("out"));
   };
 
   return (

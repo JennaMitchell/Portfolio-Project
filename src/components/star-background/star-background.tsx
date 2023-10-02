@@ -96,7 +96,7 @@ const StarBackground = (): JSX.Element => {
                 }
               }
             }
-            ctx.lineWidth = 0.05;
+            ctx.lineWidth = 0.1;
             ctx.strokeStyle = "white";
             ctx.stroke();
           }
@@ -152,7 +152,7 @@ const StarBackground = (): JSX.Element => {
         notNullCanvasRef.height = window.innerHeight;
         const starsContainer = [];
 
-        const numberOfStars = 100;
+        const numberOfStars = 60;
 
         // Push stars to array
         for (let starIndex = 0; starIndex < numberOfStars; starIndex++) {
