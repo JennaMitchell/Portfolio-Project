@@ -1,0 +1,26 @@
+@use "../abstracts" as *;
+.projects-section-container {
+  padding-top: 20px;
+}
+.title-text-container {
+  display: flex;
+  width: max-content;
+  height: max-content;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+}
+.projects-accordion-container {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  perspective: 1000px;
+}
+.projects-accordion-card {
+  background-color: grey;
+  transform: rotateY(91deg);
+  width: max(300px, 300px);
+  height: max(300px, 300px);
+}

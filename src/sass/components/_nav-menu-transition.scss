@@ -10,7 +10,7 @@
 }
 
 .nav-menu-transition-cheveron-in {
-  width: max(300px, 300px);
+  width: max(100vw, 100vw);
   background-color: red;
   height: 100%;
   position: absolute;
@@ -18,26 +18,33 @@
   left: 0px;
 
   transform: skew(-15deg);
-  animation: transitionIn 0.5s forwards;
+  animation: transitionIn 1s forwards;
 }
 
 .nav-menu-transition-cheveron-out {
-  width: max(300px, 300px);
+  width: max(100vw, 100vw);
   background-color: red;
   height: 100%;
   position: absolute;
   top: 0px;
   left: 0px;
-
   transform: skew(15deg);
-  animation: transitionIn 0.5s backwards;
+  animation: transitionOut 1s forwards;
 }
 
 @keyframes transitionIn {
   0% {
-    left: 0px;
+    left: -100vw;
   }
   100% {
-    left: calc(100% + 100px);
+    left: 200vw;
+  }
+}
+@keyframes transitionOut {
+  0% {
+    left: 200vw;
+  }
+  100% {
+    left: -100vw;
   }
 }

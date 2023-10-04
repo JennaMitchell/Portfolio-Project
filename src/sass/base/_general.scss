@@ -1,5 +1,8 @@
 @use "../abstracts/" as *;
-
+main {
+  overflow: hidden;
+  position: relative;
+}
 body {
   // font-family: $body-font-family;
   // font-weight: $body-font-weight;

@@ -20,12 +20,18 @@
   align-content: center;
   justify-items: center;
   z-index: 100;
+  background-image: url("../../library/assets/constellation.jpeg");
+  background-size: cover;
 
   &-page-selection-button {
+    position: relative;
     font-family: inherit;
     font-size: inherit;
-    width: 100%;
+    width: max(300px, 300px);
     height: max(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 0px;
     background-color: transparent;
     border: none;
@@ -58,16 +64,35 @@
         0 0 45px rgb($color-neon-lime, 0.5);
     }
   }
+  .connecting-dots-dot,
+  .connecting-dots-dot-left,
+  .connecting-dots-dot-right {
+    position: absolute;
+    background-color: white;
+    width: max(2px, 2px);
+    height: max(2px, 2px);
+    bottom: 0px;
+    transition: width 0.5s;
+  }
+
+  .connecting-dots-dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .connecting-dots-dot-left {
+    left: 0px;
+  }
+  .connecting-dots-dot-right {
+    left: 100%;
+  }
+  .connecting-dots-active {
+    width: max(100%, 100%);
+  }
+
   button:hover {
     cursor: pointer;
   }
 
-  // :nth-child(1) {
-  //   border-bottom-left-radius: 5px;
-  // }
-  // :last-child {
-  //   border-bottom-right-radius: 5px;
-  // }
   .nav-home-button-active {
     color: $color-neon-red;
     text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
@@ -120,7 +145,7 @@
   height: max(100%, 100%);
   position: absolute;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 // .nav {

@@ -2,6 +2,6 @@
 
 @each $size-name, $size-value in $font-sizes {
   .fs-#{$size-name} {
-    font-size: calc($size-value/ 16 * 1rem);
+    font-size: toRem($size-value);
   }
 }

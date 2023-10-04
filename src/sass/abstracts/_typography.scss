@@ -20,6 +20,7 @@ $font-sizes: (
   "22": 22,
   "26": 26,
   "32": 32,
+  "48": 48,
   "64": 64,
   "82": 82,
   "128": 128,
@@ -32,6 +33,7 @@ $font-size-20: map.get($font-sizes, "20");
 $font-size-22: map.get($font-sizes, "22");
 $font-size-26: map.get($font-sizes, "26");
 $font-size-32: map.get($font-sizes, "32");
+$font-size-48: map.get($font-sizes, "48");
 $font-size-64: map.get($font-sizes, "64");
 $font-size-82: map.get($font-sizes, "82");
 $font-size-128: map.get($font-sizes, "128");
