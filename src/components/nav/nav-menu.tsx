@@ -5,6 +5,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../library/store/typescript-hooks";
+
 const NavMenu = (): JSX.Element => {
   const activeNavButton = useAppSelector((state) => state.nav.activePage);
   const navButtonsLabels = ["Home", "Education", "Projects", "Certificates"];
@@ -19,6 +20,7 @@ const NavMenu = (): JSX.Element => {
       const targetElementData = targetElement.getAttribute("data-nav-type");
       if (targetElementData) {
         dispatch(navStoreActions.setNavMenuActive(false));
+        dispatch(navStoreActions.setNavMenuAnimationDirection("out"));
         dispatch(
           navStoreActions.setActivePage(targetElementData.toLowerCase())
         );

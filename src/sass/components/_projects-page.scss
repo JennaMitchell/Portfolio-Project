@@ -1,6 +1,39 @@
 @use "../abstracts" as *;
 .projects-section-container {
-  padding-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1200px;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+  height: max-content;
+  width: 100vw;
+  background-image: url("../../library/assets/stardust.png");
+  background-repeat: repeat;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.projects-section-container:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100vw;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
 }
 .title-text-container {
   display: flex;
@@ -9,18 +42,97 @@
   align-items: center;
   justify-items: center;
   gap: 10px;
+  z-index: 3;
 }
-.projects-accordion-container {
-  width: max-content;
+
+.projects-card,
+.projects-card-flipped {
+  width: max(700px, 700px);
+  height: max(500px, 500px);
+  position: relative;
+
+  z-index: 3;
+}
+.projects-card-flipped {
+  justify-self: right;
+}
+
+.projects-card-info-section-flipped,
+.projects-card-info-section {
+  position: absolute;
+  background-color: black;
+  min-width: 600px;
+  padding: 25px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  gap: 10px;
-  perspective: 1000px;
+  gap: 20px;
+  bottom: 20px;
 }
-.projects-accordion-card {
-  background-color: grey;
-  transform: rotateY(91deg);
-  width: max(300px, 300px);
-  height: max(300px, 300px);
+
+.projects-card-info-section {
+  right: -550px;
+}
+
+.projects-card-info-section-flipped {
+  left: -550px;
+}
+.projects-card-title {
+  width: max-content;
+  height: max-content;
+  font-size: toRem($font-size-64);
+  color: white;
+  // font-family: $font-family;
+}
+.projects-card-description {
+  width: max-content;
+  max-width: 600px;
+  height: max-content;
+  font-size: toRem($font-size-20);
+  color: white;
+}
+.projects-card-more-info-button {
+  width: max-content;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0px;
+  border: 2px solid red;
+  background-color: black;
+  align-self: flex-end;
+  font-family: $font-family-base;
+  overflow: hidden;
+  z-index: 3;
+  position: relative;
+  transition: all 1s;
+}
+.projects-card-more-info-button:after {
+  content: "";
+  width: max(100%, 100%);
+  height: max(100%, 100%);
+  background-color: red;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  transition: all 1s;
+}
+.projects-card-more-info-button:hover {
+  color: black;
+  cursor: pointer;
+}
+.projects-card-more-info-button:hover::after {
+  left: 0%;
+}
+
+.projects-card-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: max(100%, 100%);
+  height: max(100%, 100%);
+  object-fit: cover;
+}
+.projects-card-reversed {
+  transform: rotateX(180deg);
 }
