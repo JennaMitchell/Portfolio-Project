@@ -8,7 +8,7 @@ import {
 
 const NavMenu = (): JSX.Element => {
   const activeNavButton = useAppSelector((state) => state.nav.activePage);
-  const navButtonsLabels = ["Home", "Education", "Projects", "Certificates"];
+  const navButtonsLabels = ["Home", "About", "Portfolio", "Contact"];
   const [activeHoveredElement, setActiveHoveredElement] =
     useState(activeNavButton);
   const dispatch = useAppDispatch();

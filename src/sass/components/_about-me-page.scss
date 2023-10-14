@@ -1,0 +1,199 @@
+@use "../abstracts/" as *;
+.about-me-section-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+  gap: 120px;
+  min-height: 100vh;
+  height: max-content;
+  width: 100vw;
+  //   background-image: url("../../library/assets/constellation.jpeg");
+  //   background-repeat: repeat-y;
+  //   background-size: 100% 500px;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.about-me-description-container {
+  display: flex;
+
+  gap: 200px;
+  align-items: center;
+  justify-content: center;
+}
+.about-me-description-text-container {
+  width: max(620px, 620px);
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-me-image {
+  width: max(300px, 300px);
+  height: max(300px, 300px);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.about-me-education-container {
+  width: max(1000px, 1000px);
+  height: max(400px, 400px);
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+  position: relative;
+}
+
+.about-me-eductaion-image {
+  width: max(80%, 80%);
+  height: max(100%, 100%);
+  object-fit: cover;
+}
+.about-education-info-container {
+  width: max-content;
+  max-width: 500px;
+  position: absolute;
+  bottom: 40px;
+  right: -10%;
+  background-color: black;
+  box-shadow: 0px 0px 10px rgb(white, 0.6);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.about-me-education-left-arrow,
+.about-me-education-right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  transition: all 0.5s;
+}
+.about-me-education-left-arrow {
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid rgb(62, 61, 61);
+  border-left: 0px;
+  left: -40px;
+}
+.about-me-education-right-arrow {
+  width: 0px;
+  height: 0px;
+  border-right: 0px;
+
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+
+  border-left: 20px solid rgb(62, 61, 61);
+  right: -40px;
+}
+
+.about-me-active-cards-container {
+  width: max(100%, 100%);
+  height: max(100%, 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-items: flex-start;
+  gap: 0px;
+}
+
+.about-me-education-left-arrow:hover {
+  border-right: 20px solid $color-neon-red;
+  cursor: pointer;
+}
+.about-me-education-right-arrow:hover {
+  border-left: 20px solid $color-neon-red;
+  cursor: pointer;
+}
+
+.about-me-filter-buttons-container {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max(100%, 100%);
+  height: max-content;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+
+  align-items: center;
+  justify-items: center;
+  column-gap: 10px;
+
+  grid-auto-flow: column;
+}
+
+.about-me-filter-button {
+  width: max(100%, 100%);
+  border-radius: 2.5px;
+  height: max-content;
+  padding: 10px 0px;
+  color: white;
+  background-color: $color-neon-red;
+  transition: 0.5s all;
+  border: none;
+}
+
+.about-me-active-filter-button,
+.about-me-filter-button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 137, 137);
+  color: black;
+}
+
+.about-me-course-card {
+  width: max(100%, 100%);
+  height: max(300px, 300px);
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+
+  background-color: white;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &:nth-child(1) {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  &:nth-child(n - 1) {
+    border-top: 1px solid grey;
+  }
+
+  img {
+    width: max(50px, 50px);
+    height: max(50px, 50px);
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+  button {
+    border-radius: 15px;
+    height: max-content;
+    padding: 3.5px 10px;
+    color: grey;
+    background-color: transparent;
+    transition: 0.5s all;
+    border: none;
+    width: max-content;
+    border: 1px solid black;
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 137, 137);
+    color: black;
+  }
+}

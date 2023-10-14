@@ -1,5 +1,5 @@
 @use "../abstracts" as *;
-.projects-section-container {
+.portfolio-section-container {
   padding-top: 40px;
   padding-bottom: 40px;
   display: grid;
@@ -9,14 +9,15 @@
   gap: 120px;
   height: max-content;
   width: 100vw;
-  background-image: url("../../library/assets/stardust.png");
-  background-repeat: repeat;
+  background-image: url("../../library/assets/constellation.jpeg");
+  background-repeat: repeat-y;
+  background-size: 100% 500px;
   position: relative;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.projects-section-container:after {
+.portfolio-section-container:after {
   content: "";
   position: absolute;
   top: 0px;
@@ -39,26 +40,28 @@
   display: flex;
   width: max-content;
   height: max-content;
-  align-items: center;
+  align-items: flex-end;
   justify-items: center;
   gap: 10px;
   z-index: 3;
+  padding: 0px;
 }
 
-.projects-card,
-.projects-card-flipped {
+.portfolio-card,
+.portfolio-card-flipped {
   width: max(700px, 700px);
   height: max(500px, 500px);
   position: relative;
 
   z-index: 3;
+  box-shadow: 0px 0px 20px rgb(white, 0.6);
 }
-.projects-card-flipped {
+.portfolio-card-flipped {
   justify-self: right;
 }
 
-.projects-card-info-section-flipped,
-.projects-card-info-section {
+.portfolio-card-info-section-flipped,
+.portfolio-card-info-section {
   position: absolute;
   background-color: black;
   min-width: 600px;
@@ -69,30 +72,31 @@
   justify-content: center;
   gap: 20px;
   bottom: 20px;
+  box-shadow: 0px 0px 10px rgb(white, 0.6);
 }
 
-.projects-card-info-section {
+.portfolio-card-info-section {
   right: -550px;
 }
 
-.projects-card-info-section-flipped {
+.portfolio-card-info-section-flipped {
   left: -550px;
 }
-.projects-card-title {
+.portfolio-card-title {
   width: max-content;
   height: max-content;
   font-size: toRem($font-size-64);
   color: white;
   // font-family: $font-family;
 }
-.projects-card-description {
+.portfolio-card-description {
   width: max-content;
   max-width: 600px;
   height: max-content;
   font-size: toRem($font-size-20);
   color: white;
 }
-.projects-card-more-info-button {
+.portfolio-card-more-info-button {
   width: max-content;
   color: white;
   padding: 10px 20px;
@@ -106,7 +110,7 @@
   position: relative;
   transition: all 1s;
 }
-.projects-card-more-info-button:after {
+.portfolio-card-more-info-button:after {
   content: "";
   width: max(100%, 100%);
   height: max(100%, 100%);
@@ -117,15 +121,15 @@
   left: -100%;
   transition: all 1s;
 }
-.projects-card-more-info-button:hover {
+.portfolio-card-more-info-button:hover {
   color: black;
   cursor: pointer;
 }
-.projects-card-more-info-button:hover::after {
+.portfolio-card-more-info-button:hover::after {
   left: 0%;
 }
 
-.projects-card-image {
+.portfolio-card-image {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -133,6 +137,6 @@
   height: max(100%, 100%);
   object-fit: cover;
 }
-.projects-card-reversed {
+.portfolio-card-reversed {
   transform: rotateX(180deg);
 }

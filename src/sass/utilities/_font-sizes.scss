@@ -4,4 +4,7 @@
   .fs-#{$size-name} {
     font-size: toRem($size-value);
   }
+  .lh-#{$size-name} {
+    line-height: toRem($size-value);
+  }
 }

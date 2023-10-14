@@ -18,7 +18,7 @@
   left: 0px;
 
   transform: skew(-15deg);
-  animation: transitionIn 1s forwards;
+  animation: transitionIn 1.5s forwards;
 }
 
 .nav-menu-transition-cheveron-out {
@@ -29,7 +29,7 @@
   top: 0px;
   left: 0px;
   transform: skew(15deg);
-  animation: transitionOut 1s forwards;
+  animation: transitionOut 1.5s forwards;
 }
 
 @keyframes transitionIn {

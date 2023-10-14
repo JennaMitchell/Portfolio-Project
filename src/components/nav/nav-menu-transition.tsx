@@ -28,7 +28,7 @@ const NavMenuTransition = (): JSX.Element => {
           dispatch(navStoreActions.setNavMenuAnimationDirection(""));
         }
       }
-    }, 900);
+    }, 1400);
 
     return () => {
       clearTimeout(animationTimeout);

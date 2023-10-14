@@ -45,25 +45,26 @@
         0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-red, 0.5),
         0 0 45px rgb($color-neon-red, 0.5);
     }
-    &[data-nav-type="education"]:hover {
-      color: $color-neon-yellow;
-      text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
-        0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-yellow, 0.5),
-        0 0 45px rgb($color-neon-yellow, 0.5);
-    }
-    &[data-nav-type="projects"]:hover {
+    &[data-nav-type="about"]:hover {
       color: $color-neon-orange;
       text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
         0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-orange, 0.5),
         0 0 45px rgb($color-neon-orange, 0.5);
     }
-    &[data-nav-type="certificates"]:hover {
+    &[data-nav-type="portfolio"]:hover {
+      color: $color-neon-yellow;
+      text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
+        0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-yellow, 0.5),
+        0 0 45px rgb($color-neon-yellow, 0.5);
+    }
+    &[data-nav-type="contact"]:hover {
       color: $color-neon-lime;
       text-shadow: 0 0 2px rgb(#fff, 0.3), 0 0 4px rgb(#fff, 0.3),
         0 0 8px rgb(#fff, 0.3), 0 0 21px rgb($color-neon-lime, 0.5),
         0 0 45px rgb($color-neon-lime, 0.5);
     }
   }
+
   .connecting-dots-dot,
   .connecting-dots-dot-left,
   .connecting-dots-dot-right {

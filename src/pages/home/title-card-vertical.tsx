@@ -121,7 +121,7 @@ const TitleCardVertical = (): JSX.Element => {
           {languageArray.map((entry: string, index: number) => {
             return (
               <p
-                className="ff-base fs-16 clr-primary-000 title-card-vertical-title"
+                className="ff-base fs-20 clr-primary-000 title-card-vertical-title"
                 key={`${entry}-${index}`}
               >
                 {entry}
@@ -144,12 +144,24 @@ const TitleCardVertical = (): JSX.Element => {
         <div className="title-card-vertical-title-container ">
           {codeStackArray.map((entry: string, index: number) => {
             return (
-              <p
-                className="ff-base fs-16 clr-primary-000 title-card-vertical-title"
-                key={`${entry}-${index}`}
-              >
-                {entry}
-              </p>
+              <>
+                {entry !== "-" && (
+                  <p
+                    className="ff-base fs-20 clr-primary-000 title-card-vertical-title"
+                    key={`${entry}-${index}`}
+                  >
+                    {entry}
+                  </p>
+                )}
+                {entry === "-" && (
+                  <p
+                    className="ff-base fs-20 clr-primary-000 title-card-vertical-title"
+                    key={`${entry}-${index}`}
+                  >
+                    &nbsp;
+                  </p>
+                )}
+              </>
             );
           })}
         </div>
@@ -179,7 +191,7 @@ const TitleCardVertical = (): JSX.Element => {
         <div className="title-card-text-container">
           <div className="title-card-name-container">
             <p className="title-card-name">Jenna</p>
-            <p className="title-card-last-name">Mitchell</p>
+            <p className="title-card-last-name clr-neon-red">Mitchell</p>
           </div>
 
           <div className="completed-animated-text-container">

@@ -3,7 +3,8 @@ import NavMenu from "../../components/nav/nav-menu";
 import NavMenuTransition from "../../components/nav/nav-menu-transition";
 
 import NavMenuButton from "../../components/nav/nav-menu-button";
-const EducationMain = (): JSX.Element => {
+import EducationPage from "./about-page";
+const AboutMain = (): JSX.Element => {
   const navMenuActive = useAppSelector((state) => state.nav.navMenuActive);
 
   return (
@@ -11,7 +12,8 @@ const EducationMain = (): JSX.Element => {
       {!navMenuActive && <NavMenuButton />}
       {navMenuActive && <NavMenu />}
       <NavMenuTransition />
+      <EducationPage />
     </>
   );
 };
-export default EducationMain;
+export default AboutMain;

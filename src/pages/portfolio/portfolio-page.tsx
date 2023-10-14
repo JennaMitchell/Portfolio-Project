@@ -4,10 +4,7 @@ import CooksAssistantImage from "../../library/assets/projects/cooks-assistant.p
 import TimelessTreasureImage from "../../library/assets/projects/timeless-treasure.png";
 import FrenchQuizImage from "../../library/assets/projects/french-quiz.png";
 
-
-
-const ProjectsPage = (): JSX.Element => {
-
+const PortfolioPage = (): JSX.Element => {
   const cardsData = [
     {
       projectTitle: "Form Racer",
@@ -46,17 +43,20 @@ const ProjectsPage = (): JSX.Element => {
     },
   ];
   return (
-    <section className="projects-section-container">
-
-
+    <section className="portfolio-section-container">
+      {/* <img
+        className="portfolio-secton-background-image"
+        alt="star background"
+        src={ConstellationImage}
+      /> */}
       <div className="header-container">
         <div className="title-text-container">
-          <p className="fs-48 clr-primary-000 "> My</p>
-          <p className="fs-48 clr-neon-red"> Portfolio</p>
+          <p className="fs-48 lh-48 clr-primary-000 "> My</p>
+          <p className="fs-48 lh-48 clr-neon-red"> Portfolio</p>
         </div>
         <div className="title-text-container">
-          <p className="fs-22 clr-primary-000">Some of My</p>
-          <p className="fs-22 clr-neon-red">Works</p>
+          <p className="fs-26 lh-26 clr-primary-000">Some of My</p>
+          <p className="fs-26 lh-26 clr-neon-red">Works</p>
         </div>
       </div>
 
@@ -64,39 +64,39 @@ const ProjectsPage = (): JSX.Element => {
         return (
           <>
             {index % 2 === 0 && (
-              <div className="projects-card-flipped">
+              <div className="portfolio-card-flipped">
                 <img
-                  className="projects-card-image"
+                  className="portfolio-card-image"
                   src={entry.projectsImageUrl}
                   alt={entry.projectTitle}
                 />
 
-                <div className="projects-card-info-section-flipped">
-                  <p className="projects-card-title">{entry.projectTitle}</p>
-                  <p className="projects-card-description">
+                <div className="portfolio-card-info-section-flipped">
+                  <p className="portfolio-card-title">{entry.projectTitle}</p>
+                  <p className="portfolio-card-description">
                     {entry.projectDescription}
                   </p>
-                  <button className="projects-card-more-info-button">
-                    More Info{" "}
+                  <button className="portfolio-card-more-info-button">
+                    Go to
                   </button>
                 </div>
               </div>
             )}
             {index % 2 === 1 && (
-              <div className="projects-card">
+              <div className="portfolio-card">
                 <img
-                  className="projects-card-image"
+                  className="portfolio-card-image"
                   src={entry.projectsImageUrl}
                   alt={entry.projectTitle}
                 />
 
-                <div className="projects-card-info-section">
-                  <p className="projects-card-title">{entry.projectTitle}</p>
-                  <p className="projects-card-description">
+                <div className="portfolio-card-info-section">
+                  <p className="portfolio-card-title">{entry.projectTitle}</p>
+                  <p className="portfolio-card-description">
                     {entry.projectDescription}
                   </p>
-                  <button className="projects-card-more-info-button">
-                    More Info
+                  <button className="portfolio-card-more-info-button">
+                    Go to
                   </button>
                 </div>
               </div>
@@ -107,4 +107,4 @@ const ProjectsPage = (): JSX.Element => {
     </section>
   );
 };
-export default ProjectsPage;
+export default PortfolioPage;
