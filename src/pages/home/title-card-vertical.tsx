@@ -1,12 +1,12 @@
 import PortfolioPic from "../../library/assets/portfolio-pic.png";
-import ReactIcon from "../../library/assets/icons/react.png";
-import AzureIcon from "../../library/assets/icons/azure.png";
-import CssIcon from "../../library/assets/icons/css-3.png";
-import HtmlIcon from "../../library/assets/icons/html-5.png";
-import JsIcon from "../../library/assets/icons/js.png";
-import SassIcon from "../../library/assets/icons/sass.png";
-import LinkedInIcon from "../../library/assets/icons/linkedin.png";
-import GithubIcon from "../../library/assets/icons/github.png";
+import ReactIcon from "../../library/assets/icons/languages/react.png";
+import AzureIcon from "../../library/assets/icons/languages/azure.png";
+import CssIcon from "../../library/assets/icons/languages/css-3.png";
+import HtmlIcon from "../../library/assets/icons/languages/html-5.png";
+import JsIcon from "../../library/assets/icons/languages/js.png";
+import SassIcon from "../../library/assets/icons/languages/sass.png";
+import LinkedInIcon from "../../library/assets/icons/contacts/linkedin.png";
+import GithubIcon from "../../library/assets/icons/contacts/github.png";
 import { useState, useEffect, useMemo } from "react";
 const TitleCardVertical = (): JSX.Element => {
   const langaugesText = "Languages";

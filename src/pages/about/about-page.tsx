@@ -1,9 +1,8 @@
 import PortfolioPic from "../../library/assets/portfolio-pic.png";
 import AboutMeCoursesSection from "./about-courses";
 import OaklandUniversityImage from "../../library/assets/oakland-university.png";
-import Az900Image from "../../library/assets/Az-900.png";
-import Az204Image from "../../library/assets/Az-204.png";
-import Dp300Image from "../../library/assets/Dp-300.png";
+
+import { certificationsData } from "./about-me-data";
 const AboutPage = (): JSX.Element => {
   return (
     <section className="about-me-section-container">
@@ -51,32 +50,38 @@ const AboutPage = (): JSX.Element => {
       </div>
 
       <p className="fs-48 clr-primary-000">
-        <span className="fs-48 clr-neon-red ">My &nbsp;</span>
+        <span className="fs-48 clr-neon-red ">My&nbsp;</span>
         Certifications
       </p>
-      <div className="about-me-certifications-container">
-        <div className="">
-          <img
-            alt="microsoft azure 900 exam"
-            src={Az900Image}
-            className="about-me-eductaion-image"
-          />
-          <div className="about-education-info-container">
-            <p className="fs-48 clr-primary-000 fw-bold">
-              Az-900 - Microsoft Azure Fundamentals{" "}
-            </p>
-            <p className="fs-32 clr-primary-000">Passed</p>
-            <p className="fs-22 clr-primary-000">
-              This certification validates your foundational knowledge of cloud
-              concepts in general and Azure in particular.
-            </p>
-            <p className="fs-22 clr-primary-000">Issued Oct. 2023 </p>
+
+      {certificationsData.map((data) => {
+        return (
+          <div className="about-me-certifications-container">
+            <img
+              alt="microsoft azure 900 exam"
+              src={data.certifacationImage}
+              className="about-me-certifications-photo"
+            />
+            <div className="about-me-certifications-info-container">
+              <p className="fs-48 clr-primary-000 fw-bold">
+                {data.certificationTitle}
+              </p>
+              <p className="fs-32 clr-primary-000 clr-neon-lime">
+                {data.certificationStatus}
+              </p>
+              <p className="fs-22 clr-primary-000">
+                {data.certificationDescription}
+              </p>
+              <p className="fs-22 clr-primary-000">
+                Issued {data.certificationIssueDate}{" "}
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
+        );
+      })}
 
       <p className="fs-48 clr-primary-000">
-        Completed &nbsp;
+        Completed&nbsp;
         <span className="fs-48 clr-neon-red ">Courses</span>
       </p>
 

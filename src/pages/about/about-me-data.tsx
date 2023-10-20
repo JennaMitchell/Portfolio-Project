@@ -3,6 +3,9 @@ import BeyondCssLogo from "../../library/assets/courses/beyond-css-logo.png";
 import FrontendMastersLogo from "../../library/assets/courses/frontend-masters-logo.png";
 import MicrosoftLogo from "../../library/assets/courses/microsoft-logo.png";
 import UiDevLogo from "../../library/assets/courses/ui-dev-logo.png";
+import Az900Image from "../../library/assets/Az-900.png";
+import Az204Image from "../../library/assets/Az-204.png";
+// import Dp300Image from "../../library/assets/Dp-300.png";
 
 export const aboutMeCoursesData = [
   {
@@ -21,7 +24,7 @@ export const aboutMeCoursesData = [
       "The most advanced and modern CSS course on the internet: master flexbox, CSS Grid, responsive design, and so much more.",
     courseSource: "Udemy",
     courseLink: "https://www.udemy.com/course/advanced-css-and-sass/",
-    courseTags: ["CSS", "Sass"],
+    courseTags: ["CSS", "SASS", "HTML"],
     courseLogo: UdemyLogo,
   },
   {
@@ -135,7 +138,7 @@ export const aboutMeCoursesData = [
       "Beyond CSS is a course designed to help you use modern CSS and tools like Sass and PostCSS in order to get control of your stylesheets.",
     courseSource: "BeyondCss",
     courseLink: "https://www.beyondcss.dev/",
-    courseTags: ["CSS", "Sass"],
+    courseTags: ["CSS", "SASS", "HTML"],
     courseLogo: BeyondCssLogo,
   },
   {
@@ -201,5 +204,24 @@ export const aboutMeCoursesData = [
     courseLink: "https://frontendmasters.com/",
     courseTags: ["Typescript", "React"],
     courseLogo: FrontendMastersLogo,
+  },
+];
+
+export const certificationsData = [
+  {
+    certificationTitle: "AZ-900 - Microsoft Azure Fundamentals",
+    certificationStatus: "Passed",
+    certificationDescription:
+      "This certification validates your foundational knowledge of cloud concepts in general and Azure in particular",
+    certificationIssueDate: "Oct. 2023",
+    certifacationImage: Az900Image,
+  },
+  {
+    certificationTitle: "AZ-204 - Developing Solutions for Microsoft Azure",
+    certificationStatus: "In Progress",
+    certificationDescription:
+      "This certification validates , your knowledge in all phases of development, including requirements gathering, design, development, deployment, security, maintenance, performance tuning, and monitoring.",
+    certificationIssueDate: "TBD",
+    certifacationImage: Az204Image,
   },
 ];

@@ -5,6 +5,7 @@ import PortfolioMain from "./pages/portfolio/portfolio-main";
 import "./sass/main.scss";
 import Root from "./root/root";
 import AboutMain from "./pages/about/about-main";
+import ContactMain from "./pages/contact/contact-main";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       },
       { path: "portfolio", element: <PortfolioMain /> },
       { path: "about", element: <AboutMain /> },
+      { path: "contact", element: <ContactMain /> },
     ],
   },
 ]);

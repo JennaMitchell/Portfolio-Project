@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { aboutMeCoursesData } from "./about-courses-data";
+import { useEffect, useMemo, useState } from "react";
+import { aboutMeCoursesData } from "./about-me-data";
 import { MouseEvent } from "react";
 
 const AboutMeCoursesSection = (): JSX.Element => {
@@ -16,11 +16,18 @@ const AboutMeCoursesSection = (): JSX.Element => {
 
   const [activeFilter, setActiveFilter] = useState("All");
 
+  const [selectedCourseData, setSelectedCourseData] =
+    useState(aboutMeCoursesData);
+  const allCourseData = useMemo(() => {
+    return aboutMeCoursesData;
+  }, []);
+
   const filterButtonClickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     const targetEvent = event.target;
     if (targetEvent) {
       const notNulLTargetElement = targetEvent as HTMLButtonElement;
       const targetElementDataType = notNulLTargetElement.dataset.coursetype;
+      console.log(targetElementDataType);
       if (targetElementDataType) {
         if (activeFilter !== targetElementDataType) {
           setActiveFilter(targetElementDataType);
@@ -31,6 +38,36 @@ const AboutMeCoursesSection = (): JSX.Element => {
     }
   };
 
+  useEffect(() => {
+    if (activeFilter === "All") {
+      setSelectedCourseData(allCourseData);
+    } else {
+      const filteredCourseData = [];
+
+      for (
+        let indexOfAllData = 0;
+        indexOfAllData < allCourseData.length;
+        indexOfAllData++
+      ) {
+        const activeEntry = allCourseData[indexOfAllData];
+        const activeEntryTags = activeEntry.courseTags;
+
+        for (
+          let activeEntryTagsIndex = 0;
+          activeEntryTagsIndex < activeEntry.courseTags.length;
+          activeEntryTagsIndex++
+        ) {
+          const activeTag = activeEntryTags[activeEntryTagsIndex];
+          if (activeTag === activeFilter) {
+            filteredCourseData.push(activeEntry);
+          }
+        }
+      }
+
+      setSelectedCourseData(filteredCourseData);
+    }
+  }, [activeFilter, allCourseData]);
+
   return (
     <div className="about-me-education-container">
       <div className="about-me-filter-buttons-container">
@@ -40,7 +77,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
               className={`about-me-filter-button ${
                 activeFilter === entry && "about-me-active-filter-button"
               }`}
-              data-courses-coursetype={entry}
+              data-coursetype={entry}
               onClick={filterButtonClickHandler}
             >
               {entry}
@@ -50,7 +87,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
       </div>
 
       <div className="about-me-active-cards-container">
-        {aboutMeCoursesData.map((entry, index) => {
+        {selectedCourseData.map((entry, index) => {
           return (
             <div
               className={`about-me-course-card ${
