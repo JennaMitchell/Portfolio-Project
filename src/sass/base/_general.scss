@@ -3,13 +3,91 @@ main {
   overflow: hidden;
   position: relative;
 }
-body {
-  // font-family: $body-font-family;
-  // font-weight: $body-font-weight;
-  // font-size: $body-font-size;
-  // color: $body-text-color;
-  background-color: $body-background-color;
-  // line-height: $body-line-height;
+
+body[data-dark-mode="true"] {
+  @each $color, $shade-map in $dark {
+    @each $shade, $value in $shade-map {
+      .bg-#{$color}-#{$shade} {
+        background-color: $value;
+      }
+      .primary-clr-#{$color}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
+}
+
+body[data-dark-mode="false"] {
+  @each $color, $shade-map in $light {
+    @each $shade, $value in $shade-map {
+      .bg-#{$color}-#{$shade} {
+        background-color: $value;
+      }
+      .primary-clr-#{$color}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
+}
+
+body[data-sub-theme="lime"] {
+  @each $color, $shade-map in $lime {
+    @each $shade, $value in $shade-map {
+      .accent-clr-#{$color}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
+}
+
+body[data-sub-theme="red"] {
+  @each $color, $shade-map in $red {
+    @each $shade, $value in $shade-map {
+      .accent-clr-#{$color}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
+}
+
+body[data-sub-theme="blue"] {
+  @each $color, $shade-map in $blue {
+    @each $shade, $value in $shade-map {
+      .accent-clr-#{$color}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
+}
+
+body[data-sub-theme="orange"] {
+  @each $color, $shade-map in $orange {
+    @each $shade, $value in $shade-map {
+      .accent-clr-#{$color}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
+}
+
+body[data-sub-theme="yellow"] {
+  @each $color, $shade-map in $yellow {
+    @each $shade, $value in $shade-map {
+      .accent-clr-#{$color}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
+}
+
+body[data-sub-theme="purple"] {
+  @each $color, $shade-map in $purple {
+    @each $shade, $value in $shade-map {
+      .accent-clr-#{$color}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
 }
 
 // a {

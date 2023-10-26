@@ -1,5 +1,6 @@
 import { MouseEvent, useEffect } from "react";
 import { useRef, useState, useCallback } from "react";
+import { useAppSelector } from "../../library/store/typescript-hooks";
 
 type StarData = {
   x: number;
@@ -13,6 +14,7 @@ const StarBackground = (): JSX.Element => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [starsData, setStarsData] = useState<StarData[]>([]);
   const [usersMousePosition, setUsersMousePosition] = useState({ x: 0, y: 0 });
+  const darkModeActive = useAppSelector((state) => state.theme.darkModeActive);
 
   const FPS = 60;
   const [starDataInitialized, setStarsDataInitialized] = useState(false);
@@ -68,6 +70,7 @@ const StarBackground = (): JSX.Element => {
               ctx.beginPath();
               ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
               ctx.fill();
+
               ctx.fillStyle = "black";
               ctx.stroke();
             }
@@ -97,13 +100,19 @@ const StarBackground = (): JSX.Element => {
               }
             }
             ctx.lineWidth = 0.1;
-            ctx.strokeStyle = "white";
+
+            if (darkModeActive) {
+              ctx.strokeStyle = "white";
+            } else {
+              ctx.strokeStyle = "black";
+            }
+
             ctx.stroke();
           }
         }
       }
     },
-    [distance, starsData, starDataInitialized]
+    [distance, starsData, starDataInitialized, darkModeActive]
   );
 
   // Update star locations

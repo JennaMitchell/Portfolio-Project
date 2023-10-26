@@ -6,6 +6,9 @@ import TitleCardVertical from "./title-card-vertical";
 import NavMenuButton from "../../components/nav/nav-menu-button";
 import NavMenu from "../../components/nav/nav-menu";
 import { useAppSelector } from "../../library/store/typescript-hooks";
+import ThemePulloutButton from "../../components/theme-pullout/theme-pullout-button";
+import ThemePulloutMenu from "../../components/theme-pullout/theme-pullout-menu";
+import DarkModeButton from "../../components/dark-mode/dark-mode-button";
 const HomepageMain = (): JSX.Element => {
   const navMenuActive = useAppSelector((state) => state.nav.navMenuActive);
 
@@ -13,10 +16,13 @@ const HomepageMain = (): JSX.Element => {
     <>
       {navMenuActive && <NavMenu />}
       <NavMenuTransition />
+      <ThemePulloutButton />
+      <ThemePulloutMenu />
 
       {!navMenuActive && <NavMenuButton />}
       {!navMenuActive && <TitleCardVertical />}
       {!navMenuActive && <StarBackground />}
+      <DarkModeButton />
     </>
   );
 };

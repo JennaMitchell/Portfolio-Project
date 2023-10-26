@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+.section-title-text {
+  font-size: toRem($font-size-64);
+  line-height: toRem($font-size-64);
+  color: white;
+}
+
+.section-title-text-accent {
+  font-size: toRem($font-size-82);
+  line-height: toRem(72);
+  height: max-content;
+  width: max-content;
+}

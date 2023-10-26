@@ -1,12 +1,5 @@
 @use "../abstracts/" as *;
-$portfolio-img-radius: 300px;
-//ring animation settings
-$ring-animation-duration: 10s;
-$ring-animation-name: ring-animation;
-$ring-animation-1-delay: 0s;
-$ring-animation-2-delay: 3.5s;
-$ring-animation-3-delay: 7s;
-$ring-animations-iteration-count: infinite;
+
 .title-card-section-container {
   width: max(100vw, 100vw);
   height: max(100vh, 100vh);
@@ -18,7 +11,7 @@ $ring-animations-iteration-count: infinite;
 
 .title-card-data-container {
   display: flex;
-  gap: 10px;
+  gap: toRem(10);
   height: max-content;
   width: max-content;
   align-items: center;
@@ -30,7 +23,7 @@ $ring-animations-iteration-count: infinite;
   height: max-content;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: toRem(10);
   align-items: center;
   justify-items: center;
   background-color: transparent;
@@ -41,7 +34,7 @@ $ring-animations-iteration-count: infinite;
   height: max-content;
   background-color: transparent;
   display: flex;
-  gap: 5px;
+  gap: toRem(5);
   align-items: flex-end;
   justify-content: flex-end;
 }
@@ -57,7 +50,7 @@ $ring-animations-iteration-count: infinite;
   justify-content: center;
   position: relative;
   flex-direction: column;
-  gap: 10px;
+  gap: toRem(10);
 }
 
 .animated-text-container {
@@ -75,13 +68,14 @@ $ring-animations-iteration-count: infinite;
 .title-card-animated-text {
   font-size: toRem($font-size-64);
   line-height: toRem($font-size-64);
-
-  color: white;
 }
 
 .flashing-typing-bar {
-  width: max(3px, 3px);
-  height: max(55px, 55px);
+  width: toRem(3);
+  max-width: toRem(3);
+  height: toRem(55);
+  max-height: toRem(55);
+
   background-color: white;
 
   animation-name: flashing-bar;
@@ -93,22 +87,23 @@ $ring-animations-iteration-count: infinite;
 }
 .title-card-last-name {
   font-size: toRem($font-size-82);
-  line-height: 74px;
-  color: rgb(158, 158, 158);
+  line-height: toRem(72);
   height: max-content;
   width: max-content;
 }
 .title-card-name {
   font-size: toRem($font-size-64);
   line-height: toRem($font-size-64);
-  color: white;
 }
 
 .portfolio-img {
-  width: max($portfolio-img-radius, $portfolio-img-radius);
-  height: max($portfolio-img-radius, $portfolio-img-radius);
+  width: toRem(350);
+  max-width: toRem(350);
+  height: toRem(350);
+  max-height: toRem(350);
+
   border-radius: 50%;
-  padding: 10px;
+  padding: toRem(10);
   position: relative;
   z-index: 1;
 }
@@ -116,13 +111,13 @@ $ring-animations-iteration-count: infinite;
   width: max-content;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 0px 10px;
+  padding: 0px toRem(10);
   text-align: right;
-  padding-bottom: 40px;
+  padding-bottom: toRem(40);
 }
 .tech-stack-container {
   display: flex;
-  gap: 40px;
+  gap: toRem(40);
   width: max-content;
 
   height: max-content;
@@ -132,7 +127,7 @@ $ring-animations-iteration-count: infinite;
 .languages-vertical-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: toRem(10);
   width: max-content;
   height: max-content;
   z-index: 2;
@@ -145,10 +140,10 @@ $ring-animations-iteration-count: infinite;
 }
 
 .tech-stack-container-vertical {
-  left: 20px;
+  left: toRem(20);
 }
 .languages-vertical-container {
-  right: 20px;
+  right: toRem(20);
 }
 
 .title-card-vertical-title {
@@ -169,24 +164,24 @@ $ring-animations-iteration-count: infinite;
   justify-items: center;
 }
 .title-card-vertical-title-container {
-  gap: 5px;
+  gap: toRem(5);
 }
 .code-platform-icon-list-container-vertical {
-  gap: 10px;
+  gap: toRem(10);
 }
 .title-card-vertical-title-container {
   border-bottom: 2px solid white;
-  padding-bottom: 20px;
+  padding-bottom: toRem(20);
 }
 .tech-stack-title {
-  padding-right: 10px;
+  padding-right: toRem(10);
   border-right: 2px solid white;
 }
 .code-platform-icon-list-container {
   width: max-content;
   max-width: max-content;
   display: flex;
-  gap: 10px;
+  gap: toRem(10);
   height: max-content;
 }
 
@@ -205,8 +200,12 @@ $ring-animations-iteration-count: infinite;
 }
 .code-icon-link {
   opacity: 0;
-  width: max(20px, 20px);
-  height: max(20px, 20px);
+
+  width: toRem(20);
+  max-width: toRem(20);
+  height: toRem(20);
+  max-height: toRem(20);
+
   color: transparent;
   background-color: transparent;
   position: absolute;
@@ -215,49 +214,18 @@ $ring-animations-iteration-count: infinite;
   transform: translate(-50%, -50%);
 }
 .code-icon {
-  width: max(20px, 20px);
-  height: max(20px, 20px);
+  width: toRem(20);
+  max-width: toRem(20);
+  height: toRem(20);
+  max-height: toRem(20);
+
   object-fit: cover;
-  margin: 0px 1.5px;
+  margin: 0px toRem(1.5);
 }
 .portfolio-pic-container {
   position: relative;
   z-index: 1;
   background-color: transparent;
-}
-.glow-circle {
-  width: max(
-    calc($portfolio-img-radius + 50px),
-    calc($portfolio-img-radius + 50px)
-  );
-  height: max(
-    calc($portfolio-img-radius + 50px),
-    calc($portfolio-img-radius + 50px)
-  );
-  background-color: transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  transform: translate(-50%, -50%);
-  animation-name: $ring-animation-name;
-  animation-duration: $ring-animation-duration;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
-  animation-fill-mode: both;
-  border: 4px solid;
-}
-
-.glow-circle-1 {
-  animation-delay: $ring-animation-1-delay;
-}
-.glow-circle-2 {
-  animation-delay: $ring-animation-2-delay;
-  animation-direction: alternate;
-}
-.glow-circle-3 {
-  animation-delay: $ring-animation-3-delay;
 }
 
 .star-canvas {
@@ -265,29 +233,6 @@ $ring-animations-iteration-count: infinite;
   z-index: 2;
 }
 
-@keyframes ring-animation {
-  0% {
-    border-radius: 68% 32% 67% 33% / 65% 21% 79% 35%;
-    border-color: $color-neon-blue;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    border-radius: 11% 89% 19% 81% / 88% 8% 92% 12%;
-    border-color: $color-neon-red;
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-  100% {
-    border-radius: 16% 84% 38% 62% / 24% 65% 35% 76%;
-    border-color: $color-neon-lime;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-//border-radius:71% 29% 55% 45% / 45% 30% 70% 55%
-//border-radius: 23% 77% 55% 45% / 69% 30% 70% 31% ;
-//border-radius: 86% 14% 69% 31% / 69% 30% 70% 31%
-// box-shadow: 0 0 4px rgb(#fff, 0.35), 0 0 8px $color-neon-lime,
-// 0 0 12px $color-neon-lime, 0 0 16px $color-neon-lime;
 @keyframes flashing-bar {
   0% {
     opacity: 0;

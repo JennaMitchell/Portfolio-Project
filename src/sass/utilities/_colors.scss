@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-@each $color, $shade-map in $active-theme {
+@each $color, $shade-map in $white {
   @each $shade, $value in $shade-map {
     .clr-#{$color}-#{$shade} {
       color: $value;
@@ -10,6 +10,18 @@
     }
   }
 }
+
+@each $color, $shade-map in $neon {
+  @each $shade, $value in $shade-map {
+    .clr-#{$color}-#{$shade} {
+      color: $value;
+    }
+    .bg-#{$color}-#{$shade} {
+      background-color: $value;
+    }
+  }
+}
+
 .bg-transparent {
   background-color: transparent;
 }

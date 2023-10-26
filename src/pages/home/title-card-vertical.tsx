@@ -32,18 +32,18 @@ const TitleCardVertical = (): JSX.Element => {
     ];
   }, []);
   const [activeAnimatedTitleIndex, setActiveAnimatedTitleIndex] = useState(0);
-  const [activeAnimatedTitlePosition, setActiveAnimatedTitlePosition] =
+  const [activeAnimatedTitleLetterIndex, setActiveAnimatedTitleLetterIndex] =
     useState(0);
 
   const [splitAnimatedTitles, setSplitAnimatedTitles] = useState<string[][]>(
     []
   );
-  const [holdAnimationSecondsCount, setHoldAnimationSecondsCount] = useState(1);
-  const [holdAnimationActive, setHoldAnimationActive] = useState(false);
 
   const [animationCompletedTitles, setAnimationCompletedTitles] = useState<
     string[]
   >([]);
+  const [triggerAnimationNextStep, setTriggerAnimationNextStep] =
+    useState(false);
 
   useEffect(() => {
     const tempTitlesArray = [];
@@ -59,69 +59,60 @@ const TitleCardVertical = (): JSX.Element => {
   }, [animatedTitles]);
 
   useEffect(() => {
-    const activeAnimatedTitles = animatedTitles[activeAnimatedTitleIndex];
+    if (
+      splitAnimatedTitles.length !== 0 &&
+      animationCompletedTitles.length !== animatedTitles.length &&
+      triggerAnimationNextStep
+    ) {
+      if (
+        activeAnimatedTitleLetterIndex ===
+        splitAnimatedTitles[activeAnimatedTitleIndex].length - 1
+      ) {
+        const tempCompletedTitles = animationCompletedTitles.splice(0);
+        tempCompletedTitles.push(
+          animatedTitlesWithoutDash[activeAnimatedTitleIndex]
+        );
 
-    if (splitAnimatedTitles.length !== 0) {
-      const animationTimeout = setTimeout(() => {
-        if (animationCompletedTitles.length !== animatedTitles.length) {
-          if (
-            holdAnimationSecondsCount >= 0 &&
-            holdAnimationSecondsCount < 1 &&
-            holdAnimationActive
-          ) {
-            setHoldAnimationSecondsCount(holdAnimationSecondsCount + 1);
-          } else if (holdAnimationSecondsCount === 1 && holdAnimationActive) {
-            setHoldAnimationActive(false);
-            setActiveAnimatedTitlePosition(0);
+        setActiveAnimatedTitleIndex(activeAnimatedTitleIndex + 1);
 
-            if (activeAnimatedTitleIndex === animatedTitles.length - 1) {
-              setActiveAnimatedTitleIndex(0);
-            } else {
-              setActiveAnimatedTitleIndex(activeAnimatedTitleIndex + 1);
-            }
-            const tempCompletedAnimationList =
-              animationCompletedTitles.splice(0);
-            tempCompletedAnimationList.push(
-              animatedTitlesWithoutDash[activeAnimatedTitleIndex]
-            );
-            setAnimationCompletedTitles(tempCompletedAnimationList);
-          } else {
-            if (
-              activeAnimatedTitles.length - 1 ===
-              activeAnimatedTitlePosition
-            ) {
-              setHoldAnimationActive(true);
-              setHoldAnimationSecondsCount(0);
-            } else {
-              setActiveAnimatedTitlePosition(activeAnimatedTitlePosition + 1);
-            }
-          }
-        }
-      }, 150);
+        setAnimationCompletedTitles(tempCompletedTitles);
 
-      return () => {
-        clearTimeout(animationTimeout);
-      };
+        setActiveAnimatedTitleLetterIndex(0);
+      } else {
+        setActiveAnimatedTitleLetterIndex(activeAnimatedTitleLetterIndex + 1);
+      }
+      setTriggerAnimationNextStep(false);
     }
   }, [
     activeAnimatedTitleIndex,
-    activeAnimatedTitlePosition,
+    activeAnimatedTitleLetterIndex,
     animatedTitles,
-    holdAnimationSecondsCount,
-    holdAnimationActive,
+
     animationCompletedTitles,
     animatedTitlesWithoutDash,
     splitAnimatedTitles,
+    triggerAnimationNextStep,
   ]);
 
+  useEffect(() => {
+    if (animationCompletedTitles.length !== animatedTitles.length) {
+      const animationTriggerTimeout = setTimeout(() => {
+        setTriggerAnimationNextStep(!triggerAnimationNextStep);
+      }, 150);
+      return () => {
+        clearTimeout(animationTriggerTimeout);
+      };
+    }
+  }, [triggerAnimationNextStep, animationCompletedTitles, animatedTitles]);
+
   return (
-    <section className="full-window-centered bg-transparent title-card-section-container">
+    <section className="full-window-centered bg-primary-1000 title-card-section-container">
       <div className="languages-vertical-container">
         <div className="title-card-vertical-title-container">
           {languageArray.map((entry: string, index: number) => {
             return (
               <p
-                className="ff-base fs-20 clr-primary-000 title-card-vertical-title"
+                className="ff-base fs-20 primary-clr-primary-000 title-card-vertical-title"
                 key={`${entry}-${index}`}
               >
                 {entry}
@@ -144,24 +135,18 @@ const TitleCardVertical = (): JSX.Element => {
         <div className="title-card-vertical-title-container ">
           {codeStackArray.map((entry: string, index: number) => {
             return (
-              <>
+              <div key={`${entry}-${index}`}>
                 {entry !== "-" && (
-                  <p
-                    className="ff-base fs-20 clr-primary-000 title-card-vertical-title"
-                    key={`${entry}-${index}`}
-                  >
+                  <p className="ff-base fs-20 primary-clr-primary-000 title-card-vertical-title">
                     {entry}
                   </p>
                 )}
                 {entry === "-" && (
-                  <p
-                    className="ff-base fs-20 clr-primary-000 title-card-vertical-title"
-                    key={`${entry}-${index}`}
-                  >
+                  <p className="ff-base fs-20 primary-clr-primary-000 title-card-vertical-title">
                     &nbsp;
                   </p>
                 )}
-              </>
+              </div>
             );
           })}
         </div>
@@ -190,8 +175,10 @@ const TitleCardVertical = (): JSX.Element => {
       <div className="title-card-data-container">
         <div className="title-card-text-container">
           <div className="title-card-name-container">
-            <p className="title-card-name">Jenna</p>
-            <p className="title-card-last-name clr-neon-red">Mitchell</p>
+            <p className="section-title-text primary-clr-primary-000">Jenna</p>
+            <p className="section-title-text-accent accent-clr-primary-500">
+              Mitchell
+            </p>
           </div>
 
           <div className="completed-animated-text-container">
@@ -199,55 +186,53 @@ const TitleCardVertical = (): JSX.Element => {
               animationCompletedTitles.map((entry, index) => {
                 return (
                   <p
-                    className={`title-card-animated-text `}
-                    key={`completed-job-title--${index}-${activeAnimatedTitleIndex}-${activeAnimatedTitlePosition}-${splitAnimatedTitles[activeAnimatedTitleIndex]}`}
+                    className={`title-card-animated-text primary-clr-primary-000`}
+                    key={`completed-job-title--${index}-${activeAnimatedTitleIndex}-${activeAnimatedTitleLetterIndex}-${splitAnimatedTitles[activeAnimatedTitleIndex]}`}
                   >
                     {entry}
                   </p>
                 );
               })}
           </div>
-          {animationCompletedTitles.length !== animatedTitles.length &&
-            activeAnimatedTitlePosition !== 4 && (
-              <div className="animated-text-container">
-                {splitAnimatedTitles.length !== 0 &&
-                  splitAnimatedTitles[activeAnimatedTitleIndex].map(
-                    (entry, index) => {
-                      return (
-                        <div
-                          key={`animated-titles-${entry}-${index}-${activeAnimatedTitleIndex}-${activeAnimatedTitlePosition}-${holdAnimationActive}}`}
-                        >
-                          {entry !== "-" ? (
-                            <p
-                              className={`title-card-animated-text ${
-                                activeAnimatedTitlePosition >= index
-                                  ? "display-grid"
-                                  : "display-none"
-                              }`}
-                            >
-                              {entry}
-                            </p>
-                          ) : (
-                            <p
-                              className={`title-card-animated-text ${
-                                activeAnimatedTitlePosition >= index
-                                  ? "display-grid"
-                                  : "display-none"
-                              }`}
-                              key={`animated-titles-space-${entry}-${index}-${activeAnimatedTitleIndex}-${activeAnimatedTitlePosition}-${holdAnimationActive}`}
-                            >
-                              &nbsp;
-                            </p>
-                          )}
-                        </div>
-                      );
-                    }
-                  )}
-                {!holdAnimationActive && (
-                  <div className="flashing-typing-bar" />
+          {animationCompletedTitles.length !== animatedTitles.length && (
+            <div className="animated-text-container">
+              {splitAnimatedTitles.length !== 0 &&
+                splitAnimatedTitles[activeAnimatedTitleIndex].map(
+                  (entry, index) => {
+                    return (
+                      <div
+                        key={`animated-titles-${entry}-${index}-${activeAnimatedTitleIndex}-${activeAnimatedTitleLetterIndex}}`}
+                      >
+                        {entry !== "-" ? (
+                          <p
+                            className={`title-card-animated-text primary-clr-primary-000 ${
+                              activeAnimatedTitleLetterIndex >= index
+                                ? "display-grid"
+                                : "display-none"
+                            }`}
+                          >
+                            {entry}
+                          </p>
+                        ) : (
+                          <p
+                            className={`title-card-animated-text primary-clr-primary-000 ${
+                              activeAnimatedTitleLetterIndex >= index
+                                ? "display-grid"
+                                : "display-none"
+                            }`}
+                          >
+                            &nbsp;
+                          </p>
+                        )}
+                      </div>
+                    );
+                  }
                 )}
-              </div>
-            )}
+              {animationCompletedTitles.length !== animatedTitles.length && (
+                <div className="flashing-typing-bar primary-clr-primary-000" />
+              )}
+            </div>
+          )}
         </div>
 
         <img src={PortfolioPic} alt="portfolio-pic" className="portfolio-img" />

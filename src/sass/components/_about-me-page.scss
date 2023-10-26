@@ -41,25 +41,12 @@
   object-fit: cover;
 }
 
-.about-me-certifications-container {
-  width: max(1000px, 1000px);
-  height: max(400px, 400px);
-  display: flex;
-  align-items: center;
-  justify-items: flex-start;
-  position: relative;
-}
-
 .about-me-education-container {
   width: max(1000px, 1000px);
   display: flex;
   align-items: center;
   justify-items: flex-start;
   position: relative;
-}
-
-.about-me-certifications-container {
-  box-shadow: 0px 0px 10px rgb(white, 0.6);
 }
 
 .about-me-eductaion-image {
@@ -81,16 +68,31 @@
   bottom: 40px;
 }
 
+.about-me-certifications-container {
+  width: max(1000px, 1000px);
+  height: max(380px, 380px);
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+  position: relative;
+  padding: 20px;
+  gap: 20px;
+}
+
+.about-me-certifications-container {
+  box-shadow: 0px 0px 10px rgb(white, 0.6);
+}
+
 .about-me-certifications-photo {
-  width: max(45%, 45%);
-  height: max(100%, 100%);
+  width: max(150px, 150px);
+  height: max(150px, 150px);
   object-fit: contain;
 }
 
 .about-me-certifications-info-container {
-  width: max(55%, 55%);
+  width: calc(100% - 150px);
+  max-width: calc(100% - 150px);
   max-height: 100%;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -101,13 +103,13 @@
 
 .about-me-active-cards-container {
   width: max(100%, 100%);
-  height: max(100%, 100%);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-items: flex-start;
   gap: 0px;
+  position: relative;
 }
 
 .about-me-filter-buttons-container {
@@ -157,6 +159,10 @@
   align-items: flex-start;
   justify-content: center;
   gap: 2.5px;
+  transition: top 3s;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 
   &:nth-child(1) {
     border-top-left-radius: 10px;
@@ -178,7 +184,7 @@
     border: 2px solid black;
     border-radius: 50%;
   }
-  button {
+  a {
     border-radius: 15px;
     height: max-content;
     padding: 3.5px 10px;
@@ -189,7 +195,7 @@
     width: max-content;
     border: 1px solid black;
   }
-  button:hover {
+  a:hover {
     cursor: pointer;
     background-color: black;
     color: white;
@@ -202,4 +208,8 @@
   gap: 3px;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.about-me-course-card-animation-end {
+  opacity: 1;
 }

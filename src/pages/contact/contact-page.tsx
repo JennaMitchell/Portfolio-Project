@@ -12,7 +12,7 @@ const ContactPage = () => {
         {contactData.map((entry) => {
           return (
             <div className="contact-info-slide">
-              <img alt={`${entry.contactTitle}`} src={entry.contactLogo} />
+              <img alt={`${entry.contactTitle}`} src={entry.contactWhiteIcon} />
               <p className="clr-primary-000 fs-32 lh-32 fw-bold">
                 {entry.contactTitle}
               </p>

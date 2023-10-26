@@ -193,7 +193,7 @@ export const aboutMeCoursesData = [
       "Learn how to audit & fix website accessibility issues. Learn keyboard accessibility, focus control & ARIA roles to make websites accessible to screen readers.",
     courseSource: "FrontendMasters",
     courseLink: "https://frontendmasters.com/",
-    courseTags: ["Typescript"],
+    courseTags: ["Typescript", "HTML", "CSS"],
     courseLogo: FrontendMastersLogo,
   },
   {

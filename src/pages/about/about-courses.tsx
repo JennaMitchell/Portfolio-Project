@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import { aboutMeCoursesData } from "./about-me-data";
 import { MouseEvent } from "react";
 
 const AboutMeCoursesSection = (): JSX.Element => {
+  const completedCoursesContainerRef = useRef<null | HTMLDivElement>(null);
   const courseFirstBarButton = [
     "All",
     "HTML",
@@ -15,6 +16,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
   ];
 
   const [activeFilter, setActiveFilter] = useState("All");
+  const [courseCardAnimation, setCourseCardAnimation] = useState(false);
 
   const [selectedCourseData, setSelectedCourseData] =
     useState(aboutMeCoursesData);
@@ -27,7 +29,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
     if (targetEvent) {
       const notNulLTargetElement = targetEvent as HTMLButtonElement;
       const targetElementDataType = notNulLTargetElement.dataset.coursetype;
-      console.log(targetElementDataType);
+
       if (targetElementDataType) {
         if (activeFilter !== targetElementDataType) {
           setActiveFilter(targetElementDataType);
@@ -66,12 +68,21 @@ const AboutMeCoursesSection = (): JSX.Element => {
 
       setSelectedCourseData(filteredCourseData);
     }
+    setCourseCardAnimation(true);
   }, [activeFilter, allCourseData]);
+
+  useEffect(() => {
+    if (courseCardAnimation) {
+      setTimeout(() => {
+        setCourseCardAnimation(false);
+      }, 300);
+    }
+  }, [courseCardAnimation]);
 
   return (
     <div className="about-me-education-container">
       <div className="about-me-filter-buttons-container">
-        {courseFirstBarButton.map((entry) => {
+        {courseFirstBarButton.map((entry, index) => {
           return (
             <button
               className={`about-me-filter-button ${
@@ -79,6 +90,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
               }`}
               data-coursetype={entry}
               onClick={filterButtonClickHandler}
+              key={`about-me-filter-button-${index}`}
             >
               {entry}
             </button>
@@ -86,13 +98,24 @@ const AboutMeCoursesSection = (): JSX.Element => {
         })}
       </div>
 
-      <div className="about-me-active-cards-container">
+      <div
+        className="about-me-active-cards-container"
+        style={{ height: `${selectedCourseData.length * 240}px` }}
+        ref={completedCoursesContainerRef}
+      >
         {selectedCourseData.map((entry, index) => {
           return (
             <div
               className={`about-me-course-card ${
-                index !== 0 && "about-me-course-card"
+                courseCardAnimation
+                  ? "about-me-course-card-animation-start"
+                  : "about-me-course-card-animation-end"
               }`}
+              style={{
+                top: `${courseCardAnimation ? "0px" : `${index * 240}px`}`,
+                opacity: `${courseCardAnimation ? "0" : "1"}`,
+              }}
+              key={`about-me-completed-container${index}`}
             >
               <img src={entry.courseLogo} alt="logo" />
 
@@ -104,9 +127,9 @@ const AboutMeCoursesSection = (): JSX.Element => {
                   {entry.courseSource}
                 </p>
                 {/* <p className="about-me-course-title fs-32">
-                  {entry.courseTitle}
-                </p> */}
-                <button>More Info</button>
+          {entry.courseTitle}
+        </p> */}
+                <a href={entry.courseLink}>More Info</a>
                 <p className="fs-22">
                   <span className="clr-black fw-bold">Skills:&nbsp;</span>
                   {entry.courseTags.map((entry, index) => {

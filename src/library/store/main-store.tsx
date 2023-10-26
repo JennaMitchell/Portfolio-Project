@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { navStoreSlice } from "./nav-store";
 import { animationStoreSlice } from "./animation-triggers";
+import { themeStoreSlice } from "./theme-store";
 const store = configureStore({
   reducer: {
     nav: navStoreSlice.reducer,
     animations: animationStoreSlice.reducer,
+    theme: themeStoreSlice.reducer,
   },
 });
 
