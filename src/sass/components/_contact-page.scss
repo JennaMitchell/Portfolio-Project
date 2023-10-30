@@ -12,7 +12,6 @@
   max-height: max-content;
   width: 100vw;
 
-  background-color: rgb(0, 0, 0);
   position: relative;
 }
 
@@ -26,11 +25,20 @@
   z-index: -1;
   border-radius: 20px;
 }
+
+.contact-section-background-blur-white {
+  background-color: rgb(white, 0.3);
+}
+.contact-section-background-blur-black {
+  background-color: rgb(black, 0.15);
+}
+
 .contact-info-container {
   width: max-content;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 20p;
   background-image: url("../../library/assets/contact-background.jpeg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   gap: 30px;

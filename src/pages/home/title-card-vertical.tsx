@@ -137,12 +137,12 @@ const TitleCardVertical = (): JSX.Element => {
             return (
               <div key={`${entry}-${index}`}>
                 {entry !== "-" && (
-                  <p className="ff-base fs-20 primary-clr-primary-000 title-card-vertical-title">
+                  <p className="ff-base fs-20 primary-clr-primary-000 title-card-vertical-title fs-16">
                     {entry}
                   </p>
                 )}
                 {entry === "-" && (
-                  <p className="ff-base fs-20 primary-clr-primary-000 title-card-vertical-title">
+                  <p className="ff-base fs-20 primary-clr-primary-000 title-card-vertical-title fs-16">
                     &nbsp;
                   </p>
                 )}
@@ -175,18 +175,20 @@ const TitleCardVertical = (): JSX.Element => {
       <div className="title-card-data-container">
         <div className="title-card-text-container">
           <div className="title-card-name-container">
-            <p className="section-title-text primary-clr-primary-000">Jenna</p>
-            <p className="section-title-text-accent accent-clr-primary-500">
+            <p className="section-title-text lh-82 fs-82 primary-clr-primary-000">
+              Jenna
+            </p>
+            <p className="section-title-text-accent lh-82 fs-82 accent-clr-primary-500">
               Mitchell
             </p>
           </div>
 
-          <div className="completed-animated-text-container">
+          <div className="completed-animated-text-container fs-64">
             {animationCompletedTitles.length !== 0 &&
               animationCompletedTitles.map((entry, index) => {
                 return (
                   <p
-                    className={`title-card-animated-text primary-clr-primary-000`}
+                    className={`title-card-animated-text  fs-64 lh-64 primary-clr-primary-000`}
                     key={`completed-job-title--${index}-${activeAnimatedTitleIndex}-${activeAnimatedTitleLetterIndex}-${splitAnimatedTitles[activeAnimatedTitleIndex]}`}
                   >
                     {entry}
@@ -195,7 +197,7 @@ const TitleCardVertical = (): JSX.Element => {
               })}
           </div>
           {animationCompletedTitles.length !== animatedTitles.length && (
-            <div className="animated-text-container">
+            <div className="animated-text-container fs-64">
               {splitAnimatedTitles.length !== 0 &&
                 splitAnimatedTitles[activeAnimatedTitleIndex].map(
                   (entry, index) => {
@@ -205,7 +207,7 @@ const TitleCardVertical = (): JSX.Element => {
                       >
                         {entry !== "-" ? (
                           <p
-                            className={`title-card-animated-text primary-clr-primary-000 ${
+                            className={`title-card-animated-text  fs-64 lh-64 primary-clr-primary-000 ${
                               activeAnimatedTitleLetterIndex >= index
                                 ? "display-grid"
                                 : "display-none"
@@ -215,7 +217,7 @@ const TitleCardVertical = (): JSX.Element => {
                           </p>
                         ) : (
                           <p
-                            className={`title-card-animated-text primary-clr-primary-000 ${
+                            className={`title-card-animated-text fs-64 lh-64 primary-clr-primary-000 ${
                               activeAnimatedTitleLetterIndex >= index
                                 ? "display-grid"
                                 : "display-none"

@@ -2,11 +2,12 @@
 .about-me-section-container {
   padding-top: 40px;
   padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1000px;
+  grid-auto-flow: row;
 
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 120px;
   min-height: 100vh;
   height: max-content;
@@ -15,24 +16,25 @@
   //   background-image: url("../../library/assets/constellation.jpeg");
   //   background-repeat: repeat-y;
   //   background-size: 100% 500px;
-  background-color: rgb(0, 0, 0);
+
   position: relative;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 .about-me-description-container {
   display: flex;
-
+  width: max(100%, 100%);
   gap: 200px;
   align-items: center;
   justify-content: center;
 }
 .about-me-description-text-container {
-  width: max(620px, 620px);
+  width: max(680px, 680px);
   height: max-content;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px 30px;
 }
 .about-me-image {
   width: max(300px, 300px);
@@ -42,7 +44,7 @@
 }
 
 .about-me-education-container {
-  width: max(1000px, 1000px);
+  width: max(100%, 100%);
   display: flex;
   align-items: center;
   justify-items: flex-start;
@@ -59,7 +61,7 @@
   max-width: 500px;
   position: absolute;
   right: -10%;
-  background-color: black;
+
   box-shadow: 0px 0px 10px rgb(white, 0.6);
   padding: 20px;
   display: flex;
@@ -69,7 +71,7 @@
 }
 
 .about-me-certifications-container {
-  width: max(1000px, 1000px);
+  width: max(100%, 100%);
   height: max(380px, 380px);
   display: flex;
   align-items: center;
@@ -134,17 +136,16 @@
   border-radius: 2.5px;
   height: max-content;
   padding: 10px 0px;
-  color: white;
-  background-color: $color-neon-red;
+
   transition: 0.5s all;
   border: none;
+  text-decoration: none;
+  font-family: $font-family-base;
 }
 
 .about-me-active-filter-button,
 .about-me-filter-button:hover {
   cursor: pointer;
-  background-color: rgb(255, 137, 137);
-  color: black;
 }
 
 .about-me-course-card {
@@ -181,7 +182,7 @@
     width: max(50px, 50px);
     height: max(50px, 50px);
     object-fit: cover;
-    border: 2px solid black;
+    border: 2px solid;
     border-radius: 50%;
   }
   a {
@@ -194,6 +195,7 @@
     border: none;
     width: max-content;
     border: 1px solid black;
+    font-family: $font-family-base;
   }
   a:hover {
     cursor: pointer;

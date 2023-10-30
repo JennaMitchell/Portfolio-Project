@@ -51,12 +51,17 @@ const PortfolioPage = (): JSX.Element => {
       /> */}
       <div className="header-container">
         <div className="title-text-container">
-          <p className="fs-48 lh-48 clr-primary-000 "> My</p>
-          <p className="fs-48 lh-48 clr-neon-red"> Portfolio</p>
+          <p className="section-title-text fs-82 lh-82 clr-white "> My</p>
+          <p className="section-title-text fs-82 lh-82 accent-clr-primary-500">
+            {" "}
+            Portfolio
+          </p>
         </div>
         <div className="title-text-container">
-          <p className="fs-26 lh-26 clr-primary-000">Some of My</p>
-          <p className="fs-26 lh-26 clr-neon-red">Works</p>
+          <p className="fs-26 lh-26 clr-white">
+            Some of My{" "}
+            <span className="fs-26 lh-26 accent-clr-primary-500">Works</span>
+          </p>
         </div>
       </div>
 
@@ -72,8 +77,10 @@ const PortfolioPage = (): JSX.Element => {
                 />
 
                 <div className="portfolio-card-info-section-flipped">
-                  <p className="portfolio-card-title">{entry.projectTitle}</p>
-                  <p className="portfolio-card-description">
+                  <p className="portfolio-card-title fs-64">
+                    {entry.projectTitle}
+                  </p>
+                  <p className="portfolio-card-description fs-20">
                     {entry.projectDescription}
                   </p>
                   <button className="portfolio-card-more-info-button">
@@ -91,8 +98,10 @@ const PortfolioPage = (): JSX.Element => {
                 />
 
                 <div className="portfolio-card-info-section">
-                  <p className="portfolio-card-title">{entry.projectTitle}</p>
-                  <p className="portfolio-card-description">
+                  <p className="portfolio-card-title fs-64">
+                    {entry.projectTitle}
+                  </p>
+                  <p className="portfolio-card-description fs-20">
                     {entry.projectDescription}
                   </p>
                   <button className="portfolio-card-more-info-button">

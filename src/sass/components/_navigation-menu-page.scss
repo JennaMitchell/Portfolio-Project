@@ -1,9 +1,8 @@
 @use "../abstracts" as *;
 
 .nav {
-  font-size: toRem($font-size-64);
-  font-family: $navigation-font-family;
-  font-weight: $navigation-font-weight;
+  font-family: $font-family-base;
+  font-weight: $font-weight-default;
   width: max(100vw, 100vw);
   height: max(100vh, 100vh);
 
@@ -121,26 +120,6 @@
   }
 }
 
-.background-nav-text {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: toRem($font-size-128);
-  line-height: toRem($font-size-128);
-  width: max-content;
-  height: max-content;
-
-  transition: all 0.5s;
-}
-.background-nav-text-animation-on {
-  transform: translate(-50%, -50%) scaleX(1);
-  opacity: 1;
-}
-.background-nav-text-animation-off {
-  transform: translate(-50%, -50%) scaleX(5);
-  opacity: 0;
-}
 .nav-background-blur {
   width: max(100%, 100%);
   height: max(100%, 100%);
@@ -149,18 +128,25 @@
   background-color: rgba(0, 0, 0, 0.65);
 }
 
-// .nav {
-//   --flex-column-gap: #{$navigation-gap};
-//   list-style: none;
-//   font-family: $navigation-font-family;
-//   font-weight: $navigation-font-weight;
+@media (max-width: $large-breakpoint) {
+  .nav {
+    &-page-selection-button {
+      width: max(200px, 200px);
+    }
+  }
+}
 
-//   a {
-//     color: $navigation-color;
-//     text-decoration: $navigation-link-text-decoration;
-
-//     &:is(:hover, :focus) {
-//       color: $navigation-color-hover;
-//     }
-//   }
-// }
+@media (max-width: $medium-breakpoint) {
+  .nav {
+    &-page-selection-button {
+      width: max(175px, 175px);
+    }
+  }
+}
+@media (max-width: $small-breakpoint) {
+  .nav {
+    &-page-selection-button {
+      width: max(125px, 125px);
+    }
+  }
+}

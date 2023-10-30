@@ -5,19 +5,22 @@ import OaklandUniversityImage from "../../library/assets/oakland-university.png"
 import { certificationsData } from "./about-me-data";
 const AboutPage = (): JSX.Element => {
   return (
-    <section className="about-me-section-container">
-      <p className="section-title-text clr-primary-000">
-        About <span className="section-title-text clr-primary-500 ">Me</span>
+    <section className="about-me-section-container bg-primary-1000">
+      <p className="section-title-text primary-clr-primary-000 lh-82 fs-82">
+        About{" "}
+        <span className="section-title-text accent-clr-primary-500 lh-82 fs-82">
+          Me
+        </span>
       </p>
 
       <div className="about-me-description-container">
-        <div className="about-me-description-text-container">
-          <p className="fs-48 clr-primary-000">
+        <div className="about-me-description-text-container bg-primary-000">
+          <p className="fs-48 primary-clr-primary-1000">
             I'm a creative{" "}
-            <span className="clr-primary-500">web developer</span> based in Lake
-            Orion, MI
+            <span className="accent-clr-primary-500">web developer</span> based
+            in Lake Orion, MI
           </p>
-          <p className="fs-32 clr-primary-000">
+          <p className="fs-32 primary-clr-primary-1000">
             With three years of coding expereience. I have acquired the skills
             and knowledge necessary to make any project a success. I enjoy
             learning and making something new everyday.
@@ -30,8 +33,10 @@ const AboutPage = (): JSX.Element => {
         />
       </div>
 
-      <p className="section-title-text  clr-primary-500 ">
-        <span className="section-title-text clr-primary-000 ">My</span>
+      <p className="section-title-text lh-82 fs-82 accent-clr-primary-500 ">
+        <span className="section-title-text lh-82 fs-82 primary-clr-primary-000 ">
+          My
+        </span>
         &nbsp;Education
       </p>
       <div className="about-me-education-container">
@@ -40,25 +45,33 @@ const AboutPage = (): JSX.Element => {
           src={OaklandUniversityImage}
           className="about-me-eductaion-image"
         />
-        <div className="about-education-info-container">
-          <p className="fs-48 clr-primary-000 fw-bold">Oakland University</p>
-          <p className="fs-32 clr-primary-000">Electrical Engineering</p>
-          <p className="fs-22 clr-primary-000">
+        <div className="about-education-info-container bg-primary-000">
+          <p className="fs-48 primary-clr-primary-1000 fw-bold">
+            Oakland University
+          </p>
+          <p className="fs-32 primary-clr-primary-1000">
+            Electrical Engineering
+          </p>
+          <p className="fs-22 primary-clr-primary-1000">
             Specializing in Industrial Robotics and Control System Programming
           </p>
-          <p className="fs-22 clr-primary-000">Graduated in December 2018</p>
+          <p className="fs-22 primary-clr-primary-1000">
+            Graduated in December 2018
+          </p>
         </div>
       </div>
 
-      <p className="section-title-text clr-primary-500">
-        <span className="clr-primary-000 section-title-text">My&nbsp;</span>
+      <p className="section-title-text lh-82 fs-82 accent-clr-primary-500">
+        <span className="primary-clr-primary-000 section-title-text lh-82 fs-82">
+          My&nbsp;
+        </span>
         Certifications
       </p>
 
       {certificationsData.map((data, index) => {
         return (
           <div
-            className="about-me-certifications-container"
+            className="about-me-certifications-container bg-primary-000"
             key={`about-me-certifications-container-${index}`}
           >
             <img
@@ -67,16 +80,16 @@ const AboutPage = (): JSX.Element => {
               className="about-me-certifications-photo"
             />
             <div className="about-me-certifications-info-container">
-              <p className="fs-48 clr-primary-000 fw-bold">
+              <p className="fs-48 primary-clr-primary-1000 fw-bold">
                 {data.certificationTitle}
               </p>
-              <p className="fs-32 clr-primary-000 clr-neon-lime">
+              <p className="fs-32 priamry-clr-primary-1000 clr-neon-lime">
                 {data.certificationStatus}
               </p>
-              <p className="fs-22 clr-primary-000">
+              <p className="fs-22 primary-clr-primary-1000">
                 {data.certificationDescription}
               </p>
-              <p className="fs-22 clr-primary-000">
+              <p className="fs-22 primary-clr-primary-1000">
                 Issued {data.certificationIssueDate}{" "}
               </p>
             </div>
@@ -84,9 +97,11 @@ const AboutPage = (): JSX.Element => {
         );
       })}
 
-      <p className="clr-primary-000 section-title-text">
+      <p className="primary-clr-primary-000 section-title-text lh-82 fs-82">
         Completed&nbsp;
-        <span className="clr-primary-500 section-title-text">Courses</span>
+        <span className="accent-clr-primary-500 section-title-text lh-82 fs-82">
+          Courses
+        </span>
       </p>
 
       <AboutMeCoursesSection />

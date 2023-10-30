@@ -85,7 +85,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
         {courseFirstBarButton.map((entry, index) => {
           return (
             <button
-              className={`about-me-filter-button ${
+              className={`about-me-filter-button primary-clr-primary-1000 ${
                 activeFilter === entry && "about-me-active-filter-button"
               }`}
               data-coursetype={entry}
@@ -106,7 +106,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
         {selectedCourseData.map((entry, index) => {
           return (
             <div
-              className={`about-me-course-card ${
+              className={`about-me-course-card bg-primary-000 ${
                 courseCardAnimation
                   ? "about-me-course-card-animation-start"
                   : "about-me-course-card-animation-end"
@@ -117,21 +117,26 @@ const AboutMeCoursesSection = (): JSX.Element => {
               }}
               key={`about-me-completed-container${index}`}
             >
-              <img src={entry.courseLogo} alt="logo" />
+              <img src={entry.courseLogo} alt="logo" className="bc-dark" />
 
               <div className="about-me-card-info-container">
-                <p className="about-me-course-title fs-32 fw-bold">
+                <p className="about-me-course-title fs-32 fw-bold primary-clr-primary-1000">
                   {entry.courseTitle}
                 </p>
-                <p className="about-me-course-title fs-22 ">
+                <p className="about-me-course-title fs-22 primary-clr-primary-1000">
                   {entry.courseSource}
                 </p>
-                {/* <p className="about-me-course-title fs-32">
-          {entry.courseTitle}
-        </p> */}
-                <a href={entry.courseLink}>More Info</a>
-                <p className="fs-22">
-                  <span className="clr-black fw-bold">Skills:&nbsp;</span>
+
+                <a
+                  href={entry.courseLink}
+                  className="about-me-filter-button primary-clr-primary-1000"
+                >
+                  More Info
+                </a>
+                <p className="fs-22 primary-clr-primary-1000">
+                  <span className="primary-clr-primary-1000 fw-bold">
+                    Skills:&nbsp;
+                  </span>
                   {entry.courseTags.map((entry, index) => {
                     if (index === 0) {
                       return `${entry}`;

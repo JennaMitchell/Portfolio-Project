@@ -48,11 +48,11 @@ const NavMenu = (): JSX.Element => {
   };
 
   return (
-    <nav className="nav">
+    <nav className="nav fs-64">
       <div className="nav-background-blur" />
 
       <button
-        className="nav-menu-closing-button "
+        className="nav-menu-closing-button fs-32 lh-32"
         onClick={closingButtonHandler}
       >
         X

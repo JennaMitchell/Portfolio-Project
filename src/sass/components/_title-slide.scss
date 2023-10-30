@@ -40,7 +40,6 @@
 }
 
 .completed-animated-text-container {
-  font-size: toRem($font-size-64);
   width: max(18ch, 18ch);
   height: max-content;
   background-color: transparent;
@@ -54,7 +53,6 @@
 }
 
 .animated-text-container {
-  font-size: toRem($font-size-64);
   width: max(18ch, 18ch);
   height: max-content;
   background-color: transparent;
@@ -63,11 +61,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-}
-
-.title-card-animated-text {
-  font-size: toRem($font-size-64);
-  line-height: toRem($font-size-64);
 }
 
 .flashing-typing-bar {
@@ -84,16 +77,6 @@
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
   animation-fill-mode: both;
-}
-.title-card-last-name {
-  font-size: toRem($font-size-82);
-  line-height: toRem(72);
-  height: max-content;
-  width: max-content;
-}
-.title-card-name {
-  font-size: toRem($font-size-64);
-  line-height: toRem($font-size-64);
 }
 
 .portfolio-img {
@@ -149,8 +132,6 @@
 .title-card-vertical-title {
   width: max-content;
   height: max-content;
-  line-height: toRem($font-size-16);
-  font-size: toRem($font-size-16);
   padding: 0px;
 }
 
@@ -239,5 +220,29 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@media (max-width: $large-breakpoint) {
+  .portfolio-img {
+    width: toRem(250);
+    max-width: toRem(250);
+    height: toRem(250);
+    max-height: toRem(250);
+  }
+}
+@media (max-width: $medium-breakpoint) {
+  .portfolio-img {
+    width: toRem(175);
+    max-width: toRem(175);
+    height: toRem(175);
+    max-height: toRem(175);
+  }
+}
+@media (max-width: $small-breakpoint) {
+  .portfolio-img {
+    width: toRem(100);
+    max-width: toRem(100);
+    height: toRem(100);
+    max-height: toRem(100);
   }
 }

@@ -107,3 +107,16 @@
 .theme-pullout-menu-active {
   right: 0px;
 }
+@media (max-width: $large-breakpoint) {
+  .theme-pullout-button,
+  .dark-light-mode-button {
+    width: toRem(30);
+    max-width: toRem(30);
+    height: toRem(30);
+    max-height: toRem(30);
+  }
+
+  .theme-pullout-menu {
+    top: 80px;
+  }
+}

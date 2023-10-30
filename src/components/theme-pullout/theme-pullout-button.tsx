@@ -5,10 +5,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../library/store/typescript-hooks";
-import {
-  themeStoreSlice,
-  themStoreActions,
-} from "../../library/store/theme-store";
+import { themStoreActions } from "../../library/store/theme-store";
 const ThemePulloutButton = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const themeMenuActive = useAppSelector(

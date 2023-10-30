@@ -66,12 +66,12 @@ const StarBackground = (): JSX.Element => {
             ) {
               const star = starsData[indexOfDrawStar];
 
-              ctx.fillStyle = "#fff";
+              ctx.fillStyle = darkModeActive ? "#fff" : "#000";
+
               ctx.beginPath();
               ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
               ctx.fill();
 
-              ctx.fillStyle = "black";
               ctx.stroke();
             }
             // drawing the cursors dot
@@ -99,7 +99,7 @@ const StarBackground = (): JSX.Element => {
                 }
               }
             }
-            ctx.lineWidth = 0.1;
+            ctx.lineWidth = 0.3;
 
             if (darkModeActive) {
               ctx.strokeStyle = "white";

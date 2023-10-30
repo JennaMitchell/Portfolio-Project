@@ -9,9 +9,18 @@ const NavMenuButton = () => {
   };
   return (
     <button className="nav-button" onClick={navButtonClickHandler}>
-      <div data-nav-button-bar="one" className="nav-button-bar" />
-      <div data-nav-button-bar="two" className="nav-button-bar" />
-      <div data-nav-button-bar="three" className="nav-button-bar" />
+      <div
+        data-nav-button-bar="one"
+        className="nav-button-bar bg-primary-000"
+      />
+      <div
+        data-nav-button-bar="two"
+        className="nav-button-bar bg-primary-000"
+      />
+      <div
+        data-nav-button-bar="three"
+        className="nav-button-bar bg-primary-000"
+      />
     </button>
   );
 };
