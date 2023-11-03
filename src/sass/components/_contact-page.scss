@@ -1,16 +1,14 @@
+@use "../abstracts/" as *;
 .contact-section-container {
   padding-top: 40px;
   padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: flex-start;
-  gap: 120px;
   min-height: 100vh;
   height: max-content;
   max-height: max-content;
   width: 100vw;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  justify-items: center;
 
   position: relative;
 }
@@ -33,10 +31,19 @@
   background-color: rgb(black, 0.15);
 }
 
+.contact-info-centering-container {
+  width: max(100%, 100%);
+  height: max(100%, 100%);
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
 .contact-info-container {
   width: max-content;
   padding: 30px;
-  border-radius: 20p;
+  border-radius: 20px;
   background-image: url("../../library/assets/contact-background.jpeg");
   background-size: cover;
   display: flex;
@@ -47,7 +54,11 @@
   align-items: center;
   justify-content: center;
   z-index: 3;
-  position: relative;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .contact-info-slide {
   width: max(100%, 100%);
@@ -67,5 +78,56 @@
   p {
     height: max-content;
     width: max-content;
+  }
+}
+@media (max-width: $large-breakpoint) {
+  .contact-info-slide {
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: max(60px, 60px);
+      height: max(60px, 60px);
+    }
+  }
+}
+@media (max-width: $medium-breakpoint) {
+  .contact-info-container {
+    gap: 20px;
+  }
+  .contact-info-slide {
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: max(50px, 50px);
+      height: max(50px, 50px);
+    }
+  }
+}
+@media (max-width: $small-breakpoint) {
+  .contact-info-slide {
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: max(40px, 40px);
+      height: max(40px, 40px);
+    }
+  }
+}
+@media (max-width: $tiny-breakpoint) {
+  .contact-info-slide {
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: max(30px, 30px);
+      height: max(30px, 30px);
+    }
   }
 }

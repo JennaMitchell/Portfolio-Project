@@ -15,12 +15,12 @@ const AboutPage = (): JSX.Element => {
 
       <div className="about-me-description-container">
         <div className="about-me-description-text-container bg-primary-000">
-          <p className="fs-48 primary-clr-primary-1000">
+          <p className="fs-26 primary-clr-primary-1000">
             I'm a creative{" "}
-            <span className="accent-clr-primary-500">web developer</span> based
-            in Lake Orion, MI
+            <span className="accent-clr-primary-500 fs-26">web developer</span>{" "}
+            based in Lake Orion, MI
           </p>
-          <p className="fs-32 primary-clr-primary-1000">
+          <p className="fs-20 primary-clr-primary-1000">
             With three years of coding expereience. I have acquired the skills
             and knowledge necessary to make any project a success. I enjoy
             learning and making something new everyday.
@@ -43,7 +43,7 @@ const AboutPage = (): JSX.Element => {
         <img
           alt="oakland university campus"
           src={OaklandUniversityImage}
-          className="about-me-eductaion-image"
+          className="about-me-education-image"
         />
         <div className="about-education-info-container bg-primary-000">
           <p className="fs-48 primary-clr-primary-1000 fw-bold">
@@ -52,10 +52,10 @@ const AboutPage = (): JSX.Element => {
           <p className="fs-32 primary-clr-primary-1000">
             Electrical Engineering
           </p>
-          <p className="fs-22 primary-clr-primary-1000">
+          <p className="fs-20 primary-clr-primary-1000">
             Specializing in Industrial Robotics and Control System Programming
           </p>
-          <p className="fs-22 primary-clr-primary-1000">
+          <p className="fs-20 primary-clr-primary-1000">
             Graduated in December 2018
           </p>
         </div>
@@ -80,16 +80,16 @@ const AboutPage = (): JSX.Element => {
               className="about-me-certifications-photo"
             />
             <div className="about-me-certifications-info-container">
-              <p className="fs-48 primary-clr-primary-1000 fw-bold">
+              <p className="fs-26 primary-clr-primary-1000 fw-bold">
                 {data.certificationTitle}
               </p>
-              <p className="fs-32 priamry-clr-primary-1000 clr-neon-lime">
+              <p className="fs-22 priamry-clr-primary-1000 clr-neon-lime">
                 {data.certificationStatus}
               </p>
-              <p className="fs-22 primary-clr-primary-1000">
+              <p className="fs-20 primary-clr-primary-1000">
                 {data.certificationDescription}
               </p>
-              <p className="fs-22 primary-clr-primary-1000">
+              <p className="fs-20 primary-clr-primary-1000">
                 Issued {data.certificationIssueDate}{" "}
               </p>
             </div>

@@ -237,6 +237,19 @@
     height: toRem(175);
     max-height: toRem(175);
   }
+
+  .tech-stack-container-vertical {
+    left: toRem(5);
+  }
+  .languages-vertical-container {
+    right: toRem(5);
+  }
+  .code-icon {
+    width: toRem(15);
+    max-width: toRem(15);
+    height: toRem(15);
+    max-height: toRem(15);
+  }
 }
 @media (max-width: $small-breakpoint) {
   .portfolio-img {

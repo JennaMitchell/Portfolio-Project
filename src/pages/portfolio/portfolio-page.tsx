@@ -83,7 +83,7 @@ const PortfolioPage = (): JSX.Element => {
                   <p className="portfolio-card-description fs-20">
                     {entry.projectDescription}
                   </p>
-                  <button className="portfolio-card-more-info-button">
+                  <button className="portfolio-card-more-info-button fs-20">
                     Go to
                   </button>
                 </div>
@@ -104,7 +104,7 @@ const PortfolioPage = (): JSX.Element => {
                   <p className="portfolio-card-description fs-20">
                     {entry.projectDescription}
                   </p>
-                  <button className="portfolio-card-more-info-button">
+                  <button className="portfolio-card-more-info-button fs-20">
                     Go to
                   </button>
                 </div>

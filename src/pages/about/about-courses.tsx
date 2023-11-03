@@ -17,6 +17,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
 
   const [activeFilter, setActiveFilter] = useState("All");
   const [courseCardAnimation, setCourseCardAnimation] = useState(false);
+  const [selectedDataUpdated, setSelectedDataUpdated] = useState(false);
 
   const [selectedCourseData, setSelectedCourseData] =
     useState(aboutMeCoursesData);
@@ -68,19 +69,20 @@ const AboutMeCoursesSection = (): JSX.Element => {
 
       setSelectedCourseData(filteredCourseData);
     }
-    setCourseCardAnimation(true);
+    setSelectedDataUpdated(true);
+    setCourseCardAnimation(false);
   }, [activeFilter, allCourseData]);
 
   useEffect(() => {
-    if (courseCardAnimation) {
+    if (!courseCardAnimation && selectedDataUpdated) {
       setTimeout(() => {
-        setCourseCardAnimation(false);
+        setCourseCardAnimation(true);
       }, 300);
     }
-  }, [courseCardAnimation]);
+  }, [courseCardAnimation, selectedDataUpdated]);
 
   return (
-    <div className="about-me-education-container">
+    <div className="about-me-courses-top-container">
       <div className="about-me-filter-buttons-container">
         {courseFirstBarButton.map((entry, index) => {
           return (
@@ -100,7 +102,6 @@ const AboutMeCoursesSection = (): JSX.Element => {
 
       <div
         className="about-me-active-cards-container"
-        style={{ height: `${selectedCourseData.length * 240}px` }}
         ref={completedCoursesContainerRef}
       >
         {selectedCourseData.map((entry, index) => {
@@ -108,19 +109,18 @@ const AboutMeCoursesSection = (): JSX.Element => {
             <div
               className={`about-me-course-card bg-primary-000 ${
                 courseCardAnimation
-                  ? "about-me-course-card-animation-start"
-                  : "about-me-course-card-animation-end"
-              }`}
+                  ? "about-me-course-card-active"
+                  : "about-me-course-card-inactive"
+              } `}
               style={{
-                top: `${courseCardAnimation ? "0px" : `${index * 240}px`}`,
-                opacity: `${courseCardAnimation ? "0" : "1"}`,
+                transitionDelay: `${courseCardAnimation ? index * 0.75 : "0"}s`,
               }}
               key={`about-me-completed-container${index}`}
             >
               <img src={entry.courseLogo} alt="logo" className="bc-dark" />
 
               <div className="about-me-card-info-container">
-                <p className="about-me-course-title fs-32 fw-bold primary-clr-primary-1000">
+                <p className="about-me-course-title fs-26 fw-bold primary-clr-primary-1000">
                   {entry.courseTitle}
                 </p>
                 <p className="about-me-course-title fs-22 primary-clr-primary-1000">
@@ -129,7 +129,7 @@ const AboutMeCoursesSection = (): JSX.Element => {
 
                 <a
                   href={entry.courseLink}
-                  className="about-me-filter-button primary-clr-primary-1000"
+                  className="about-me-filter-button primary-clr-primary-1000 fs-20"
                 >
                   More Info
                 </a>

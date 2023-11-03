@@ -3,10 +3,11 @@
   padding-top: 40px;
   padding-bottom: 40px;
   display: grid;
-  grid-template-columns: 1200px;
+  grid-template-columns: 1000px;
   align-items: center;
   justify-content: center;
   gap: 120px;
+  min-height: 100vh;
   height: max-content;
   width: 100vw;
   background-image: url("../../library/assets/constellation.jpeg");
@@ -64,34 +65,35 @@
 .portfolio-card-info-section {
   position: absolute;
   background-color: black;
-  min-width: 600px;
+  width: max(650px, 650px);
   padding: 25px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-auto-flow: row;
   align-items: flex-start;
   justify-content: center;
   gap: 20px;
   bottom: 20px;
   box-shadow: 0px 0px 10px rgb(white, 0.6);
+  box-sizing: border-box;
 }
 
 .portfolio-card-info-section {
-  right: -550px;
+  right: -300px;
 }
 
 .portfolio-card-info-section-flipped {
-  left: -550px;
+  left: -300px;
 }
 .portfolio-card-title {
-  width: max-content;
+  width: max(100%, 100%);
   height: max-content;
 
   color: white;
   // font-family: $font-family;
 }
 .portfolio-card-description {
-  width: max-content;
-  max-width: 600px;
+  width: max(100%, 100%);
+
   height: max-content;
 
   color: white;
@@ -139,4 +141,98 @@
 }
 .portfolio-card-reversed {
   transform: rotateX(180deg);
+}
+@media (max-width: $large-breakpoint) {
+  .portfolio-section-container {
+    grid-template-columns: 725px;
+    gap: 80px;
+  }
+  .portfolio-card,
+  .portfolio-card-flipped {
+    width: max(600px, 600px);
+    height: max(400px, 400px);
+  }
+  .portfolio-card-info-section {
+    right: -100px;
+  }
+
+  .portfolio-card-info-section-flipped {
+    left: -100px;
+  }
+  .portfolio-card-info-section-flipped,
+  .portfolio-card-info-section {
+    width: max(450px, 450px);
+  }
+}
+@media (max-width: $medium-breakpoint) {
+  .portfolio-section-container {
+    grid-template-columns: 500px;
+    gap: 60px;
+  }
+
+  .portfolio-card,
+  .portfolio-card-flipped {
+    width: max(450px, 450px);
+    height: max(300px, 300px);
+  }
+  .portfolio-card-info-section {
+    right: -80px;
+  }
+
+  .portfolio-card-info-section-flipped {
+    left: -80px;
+  }
+  .portfolio-card-info-section-flipped,
+  .portfolio-card-info-section {
+    width: max(350px, 350px);
+    bottom: -20px;
+  }
+}
+@media (max-width: $small-breakpoint) {
+  .portfolio-section-container {
+    grid-template-columns: 400px;
+    gap: 40px;
+  }
+
+  .portfolio-card,
+  .portfolio-card-flipped {
+    width: max(300px, 300px);
+    height: max-content;
+    display: grid;
+    grid-template-rows: max-content max-content;
+    grid-template-columns: 300px;
+    row-gap: 40px;
+    align-items: center;
+    justify-content: center;
+    grid-auto-flow: row;
+    box-shadow: none;
+    justify-self: center;
+    padding: 0px;
+  }
+
+  .portfolio-card-image {
+    position: relative;
+    box-shadow: 0px 0px 10px white;
+    height: max(300px, 300px);
+    padding: 0px;
+    top: unset;
+    left: unset;
+  }
+
+  .portfolio-card-info-section-flipped,
+  .portfolio-card-info-section {
+    position: relative;
+
+    width: 100%;
+    height: max(220px, 220px);
+
+    left: unset;
+    right: unset;
+    bottom: unset;
+  }
+}
+@media (max-width: $tiny-breakpoint) {
+  .portfolio-section-container {
+    grid-template-columns: 300px;
+  }
 }

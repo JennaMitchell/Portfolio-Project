@@ -22,18 +22,19 @@
   overflow-x: hidden;
 }
 .about-me-description-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr max-content;
   width: max(100%, 100%);
-  gap: 200px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }
 .about-me-description-text-container {
-  width: max(680px, 680px);
+  width: max(100%, 100%);
   height: max-content;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   padding: 20px 30px;
 }
 .about-me-image {
@@ -51,31 +52,32 @@
   position: relative;
 }
 
-.about-me-eductaion-image {
+.about-me-education-image {
   width: max(80%, 80%);
-  height: max(100%, 100%);
+  height: max(300px, 300px);
   object-fit: cover;
 }
 .about-education-info-container {
   width: max-content;
   max-width: 500px;
   position: absolute;
-  right: -10%;
+  right: -10px;
 
   box-shadow: 0px 0px 10px rgb(white, 0.6);
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  bottom: 40px;
+  bottom: 20px;
 }
 
 .about-me-certifications-container {
   width: max(100%, 100%);
   height: max(380px, 380px);
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr;
   align-items: center;
-  justify-items: flex-start;
+  justify-content: center;
   position: relative;
   padding: 20px;
   gap: 20px;
@@ -92,14 +94,13 @@
 }
 
 .about-me-certifications-info-container {
-  width: calc(100% - 150px);
-  max-width: calc(100% - 150px);
+  width: max(100%, 100%);
   max-height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
   box-sizing: border-box;
-  padding: 20px;
+
   overflow-y: hidden;
 }
 
@@ -112,13 +113,20 @@
   justify-items: flex-start;
   gap: 0px;
   position: relative;
+  height: max-content;
+}
+
+.about-me-courses-top-container {
+  width: max(100%, 100%);
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .about-me-filter-buttons-container {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
   width: max(100%, 100%);
   height: max-content;
   display: grid;
@@ -160,10 +168,8 @@
   align-items: flex-start;
   justify-content: center;
   gap: 2.5px;
-  transition: top 3s;
-  top: 0px;
-  left: 0px;
-  position: absolute;
+
+  position: relative;
 
   &:nth-child(1) {
     border-top-left-radius: 10px;
@@ -212,6 +218,137 @@
   justify-content: flex-start;
 }
 
-.about-me-course-card-animation-end {
+.about-me-course-card-active {
   opacity: 1;
+  transition: all 3s;
+}
+.about-me-course-card-inactive {
+  opacity: 0;
+  transition: all 0s;
+}
+@media (max-width: $large-breakpoint) {
+  .about-me-section-container {
+    grid-template-columns: 725px;
+    gap: 80px;
+  }
+  .about-me-image {
+    width: max(225px, 225px);
+    height: max(225px, 225px);
+  }
+  .about-me-description-text-container {
+    padding: 20px 20px;
+  }
+  .about-education-info-container {
+    max-width: 400px;
+    right: -10px;
+    bottom: -10px;
+  }
+
+  .about-me-education-image {
+    height: max(250px, 250px);
+  }
+
+  .about-me-certifications-container {
+    height: max(300px, 300px);
+  }
+
+  .about-me-filter-buttons-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+@media (max-width: $medium-breakpoint) {
+  .about-me-section-container {
+    grid-template-columns: 500px;
+    gap: 60px;
+  }
+  .about-me-image {
+    width: max(150px, 150px);
+    height: max(150px, 150px);
+  }
+  .about-me-description-text-container {
+    padding: 10px 15px;
+  }
+  .about-education-info-container {
+    max-width: 300px;
+    right: -10px;
+    bottom: -10px;
+    gap: 5px;
+  }
+  .about-me-education-image {
+    height: max(200px, 200px);
+  }
+  .about-me-course-card {
+    height: max(200px, 200px);
+  }
+}
+@media (max-width: $small-breakpoint) {
+  .about-me-section-container {
+    grid-template-columns: 400px;
+    gap: 40px;
+  }
+  .about-me-image {
+    width: max(100px, 100px);
+    height: max(100px, 100px);
+  }
+  .about-me-description-text-container {
+    padding: 10px 10px;
+  }
+  .about-me-certifications-container {
+    height: max(200px, 200px);
+    padding: 10px;
+  }
+  .about-me-certifications-photo {
+    height: max(75px, 75px);
+    width: max(75px, 75px);
+  }
+  .about-me-course-card {
+    height: max(175px, 175px);
+
+    img {
+      width: max(45px, 45px);
+      height: max(45px, 45px);
+    }
+  }
+}
+@media (max-width: $tiny-breakpoint) {
+  .about-me-section-container {
+    grid-template-columns: 300px;
+    gap: 40px;
+  }
+  .about-me-image {
+    width: max(75px, 75px);
+    height: max(75px, 75px);
+  }
+  .about-me-description-text-container {
+    padding: 10px 10px;
+  }
+  .about-me-eductaion-image {
+    height: max(200px, 200px);
+    object-fit: 100%;
+    object-position: 0%;
+  }
+  .about-education-info-container {
+    max-width: 220px;
+    right: -10px;
+    bottom: -10px;
+    gap: 5px;
+  }
+  .about-me-certifications-container {
+    height: max(170px, 175px);
+  }
+  .about-me-certifications-photo {
+    height: max(50px, 50px);
+    width: max(50px, 50px);
+  }
+  .about-me-course-card {
+    height: max(150px, 150px);
+    img {
+      width: max(35px, 35px);
+      height: max(35px, 35px);
+    }
+  }
 }

@@ -131,6 +131,20 @@ body[data-dark-mode="false"] .nav-button:hover {
   }
 }
 @media (max-width: $medium-breakpoint) {
+  .nav-button {
+    padding: 10px;
+    width: max(22.5px, 22.5px);
+
+    &[data-nav-button-bar="three"] {
+      width: max(10px, 10px);
+    }
+    &[data-nav-button-bar="two"] {
+      width: max(15px, 15px);
+    }
+  }
+  .nav-button-bar {
+    height: max(3px, 3px);
+  }
   .nav-menu-closing-button {
     padding: 7.5px 12.5px;
   }
