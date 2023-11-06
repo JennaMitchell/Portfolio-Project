@@ -29,7 +29,7 @@ export const contactData = [
   },
   {
     contactTitle: "Email",
-    contactData: "test@test.com",
+    contactData: "jenna.allison.mitchell@gmail.com",
     contactBlackIcon: mailBlackIcon,
     contactWhiteIcon: mailWhiteIcon,
   },

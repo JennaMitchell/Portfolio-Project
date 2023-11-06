@@ -173,6 +173,8 @@ const StarBackground = (): JSX.Element => {
             vy: Math.floor(Math.random() * 50) - 25,
           });
         }
+        notNullCanvasRef.style.width = "100vw";
+        notNullCanvasRef.style.height = "100vh";
 
         setStarsData(starsContainer);
         setStarsDataInitialized(true);

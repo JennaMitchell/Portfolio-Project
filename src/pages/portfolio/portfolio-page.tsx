@@ -1,18 +1,18 @@
 import RedDragonPizzeriaImage from "../../library/assets/projects/red-dragon-pizzeria.png";
-import FormRacerImage from "../../library/assets/projects/form-racer-image.png";
+// import FormRacerImage from "../../library/assets/projects/form-racer-image.png";
 import CooksAssistantImage from "../../library/assets/projects/cooks-assistant.png";
 import TimelessTreasureImage from "../../library/assets/projects/timeless-treasure.png";
 import FrenchQuizImage from "../../library/assets/projects/french-quiz.png";
 
 const PortfolioPage = (): JSX.Element => {
   const cardsData = [
-    {
-      projectTitle: "Form Racer",
-      projectDescription:
-        "Experience the thrill of high-speed, pixel-perfect  form filinf  in an adrenaline-fueled game. Navigate through a hositale sci-fi environment, and defend earth from a neverending swarm of asteroids. Challenge friends in to an intense form filing adventure, and customize your ship for the ultimate race.",
-      projectUrl: "/",
-      projectsImageUrl: FormRacerImage,
-    },
+    // {
+    //   projectTitle: "Form Racer",
+    //   projectDescription:
+    //     "Experience the thrill of high-speed, pixel-perfect  form filinf  in an adrenaline-fueled game. Navigate through a hositale sci-fi environment, and defend earth from a neverending swarm of asteroids. Challenge friends in to an intense form filing adventure, and customize your ship for the ultimate race.",
+    //   projectUrl: "/",
+    //   projectsImageUrl: FormRacerImage,
+    // },
     {
       projectTitle: "Cooks Assistant",
       projectDescription:
@@ -44,11 +44,6 @@ const PortfolioPage = (): JSX.Element => {
   ];
   return (
     <section className="portfolio-section-container">
-      {/* <img
-        className="portfolio-secton-background-image"
-        alt="star background"
-        src={ConstellationImage}
-      /> */}
       <div className="header-container">
         <div className="title-text-container">
           <p className="section-title-text fs-82 lh-82 clr-white "> My</p>
