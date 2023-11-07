@@ -164,7 +164,7 @@ const StarBackground = (): JSX.Element => {
         notNullCanvasRef.height = window.innerHeight;
         const starsContainer = [];
 
-        const numberOfStars = mediumMediaQuery ? 30 : 50;
+        const numberOfStars = mediumMediaQuery ? 15 : 40;
 
         // Push stars to array
         for (let starIndex = 0; starIndex < numberOfStars; starIndex++) {
