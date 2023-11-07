@@ -1,5 +1,5 @@
 import { MouseEvent, useEffect } from "react";
-import { useRef, useState, useCallback, useMemo } from "react";
+import { useRef, useState, useCallback } from "react";
 import { useAppSelector } from "../../library/store/typescript-hooks";
 
 type StarData = {
@@ -11,9 +11,8 @@ type StarData = {
 };
 
 const StarBackground = (): JSX.Element => {
-  const mediumMediaQuery = useMemo(() => {
-    return window.matchMedia("(max-width: 45em)");
-  }, []);
+  const mediumMediaQuery = window.matchMedia("(max-width: 45em)").matches;
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [starsData, setStarsData] = useState<StarData[]>([]);
   const [usersMousePosition, setUsersMousePosition] = useState({ x: 0, y: 0 });
