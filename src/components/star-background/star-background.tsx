@@ -1,5 +1,5 @@
 import { MouseEvent, useEffect } from "react";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useMemo } from "react";
 import { useAppSelector } from "../../library/store/typescript-hooks";
 
 type StarData = {
@@ -11,6 +11,9 @@ type StarData = {
 };
 
 const StarBackground = (): JSX.Element => {
+  const mediumMediaQuery = useMemo(() => {
+    return window.matchMedia("(max-width: 45em)");
+  }, []);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [starsData, setStarsData] = useState<StarData[]>([]);
   const [usersMousePosition, setUsersMousePosition] = useState({ x: 0, y: 0 });
@@ -161,7 +164,7 @@ const StarBackground = (): JSX.Element => {
         notNullCanvasRef.height = window.innerHeight;
         const starsContainer = [];
 
-        const numberOfStars = 60;
+        const numberOfStars = mediumMediaQuery ? 30 : 50;
 
         // Push stars to array
         for (let starIndex = 0; starIndex < numberOfStars; starIndex++) {
@@ -180,7 +183,7 @@ const StarBackground = (): JSX.Element => {
         setStarsDataInitialized(true);
       }
     }
-  }, [starDataInitialized, canvasInitialized]);
+  }, [starDataInitialized, canvasInitialized, mediumMediaQuery]);
   // useEffect to call the tic function
   useEffect(() => {
     setTimeout(() => {

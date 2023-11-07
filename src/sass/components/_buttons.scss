@@ -133,7 +133,7 @@ body[data-dark-mode="false"] .nav-button:hover {
 @media (max-width: $medium-breakpoint) {
   .nav-button {
     padding: 10px;
-    width: max(22.5px, 22.5px);
+    width: max(45px, 45px);
 
     &[data-nav-button-bar="three"] {
       width: max(10px, 10px);
@@ -152,5 +152,11 @@ body[data-dark-mode="false"] .nav-button:hover {
 @media (max-width: $small-breakpoint) {
   .nav-menu-closing-button {
     padding: 5px 7.5px;
+  }
+  .nav-button {
+    padding: 10px;
+  }
+  .nav-button-bar {
+    height: max(3px, 3px);
   }
 }

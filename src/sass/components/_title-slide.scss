@@ -229,6 +229,10 @@
     height: toRem(250);
     max-height: toRem(250);
   }
+  .flashing-typing-bar {
+    height: toRem(45);
+    max-height: toRem(45);
+  }
 }
 @media (max-width: $medium-breakpoint) {
   .portfolio-img {
@@ -250,6 +254,10 @@
     height: toRem(15);
     max-height: toRem(15);
   }
+  .flashing-typing-bar {
+    height: toRem(25);
+    max-height: toRem(25);
+  }
 }
 @media (max-width: $small-breakpoint) {
   .portfolio-img {
@@ -257,5 +265,9 @@
     max-width: toRem(100);
     height: toRem(100);
     max-height: toRem(100);
+  }
+  .flashing-typing-bar {
+    height: toRem(20);
+    max-height: toRem(20);
   }
 }
