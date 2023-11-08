@@ -261,13 +261,17 @@
 }
 @media (max-width: $small-breakpoint) {
   .portfolio-img {
-    width: toRem(100);
-    max-width: toRem(100);
-    height: toRem(100);
-    max-height: toRem(100);
+    width: toRem(90);
+    max-width: toRem(90);
+    height: toRem(90);
+    max-height: toRem(90);
   }
   .flashing-typing-bar {
     height: toRem(20);
     max-height: toRem(20);
+  }
+
+  .title-card-data-container {
+    gap: toRem(0);
   }
 }

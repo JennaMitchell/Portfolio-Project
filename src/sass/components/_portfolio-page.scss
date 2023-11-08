@@ -197,9 +197,9 @@
   .portfolio-card,
   .portfolio-card-flipped {
     width: max(300px, 300px);
-    height: max-content;
+    height: max(520px, 520px);
     display: grid;
-    grid-template-rows: max-content max-content;
+    grid-template-rows: max-content;
     grid-template-columns: 300px;
     row-gap: 40px;
     align-items: center;
@@ -221,14 +221,15 @@
 
   .portfolio-card-info-section-flipped,
   .portfolio-card-info-section {
-    position: relative;
+    position: absolute;
 
     width: 100%;
-    height: max(220px, 220px);
+    height: max(240px, 240px);
 
     left: unset;
     right: unset;
     bottom: unset;
+    top: 280px;
   }
 }
 @media (max-width: $tiny-breakpoint) {

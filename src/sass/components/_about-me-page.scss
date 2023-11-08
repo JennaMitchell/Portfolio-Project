@@ -40,8 +40,9 @@
 .about-me-image {
   width: max(300px, 300px);
   height: max(300px, 300px);
-  border-radius: 10px;
+  border-radius: 50%;
   object-fit: cover;
+  background-color: transparent;
 }
 
 .about-me-education-container {
@@ -332,7 +333,7 @@
   }
   .about-education-info-container {
     max-width: 220px;
-    right: -10px;
+    right: -5px;
     bottom: -10px;
     gap: 5px;
   }

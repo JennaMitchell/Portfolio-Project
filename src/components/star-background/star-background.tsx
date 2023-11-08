@@ -101,7 +101,7 @@ const StarBackground = (): JSX.Element => {
                 }
               }
             }
-            ctx.lineWidth = 0.3;
+            ctx.lineWidth = mediumMediaQuery ? 0.1 : 0.3;
 
             if (darkModeActive) {
               ctx.strokeStyle = "white";
@@ -114,7 +114,7 @@ const StarBackground = (): JSX.Element => {
         }
       }
     },
-    [distance, starsData, starDataInitialized, darkModeActive]
+    [distance, starsData, starDataInitialized, darkModeActive, mediumMediaQuery]
   );
 
   // Update star locations
