@@ -64,7 +64,7 @@
 .portfolio-card-info-section-flipped,
 .portfolio-card-info-section {
   position: absolute;
-  background-color: black;
+
   width: max(650px, 650px);
   padding: 25px;
   display: grid;
@@ -104,7 +104,7 @@
   padding: 10px 20px;
   border-radius: 0px;
   border: 2px solid red;
-  background-color: black;
+  background-color: inherit;
   align-self: flex-end;
   font-family: $font-family-base;
   overflow: hidden;

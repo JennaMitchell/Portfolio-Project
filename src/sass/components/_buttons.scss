@@ -17,12 +17,12 @@
   transition: all 0.3s;
 
   &[data-nav-button-bar="three"] {
-    width: max(15px, 15px);
+    width: max(50%, 50%);
     border-top-right-radius: 2.5px;
     border-bottom-right-radius: 2.5px;
   }
   &[data-nav-button-bar="two"] {
-    width: max(20px, 20px);
+    width: max(75%, 75%);
     border-top-right-radius: 2.5px;
     border-bottom-right-radius: 2.5px;
   }
@@ -30,7 +30,7 @@
 .nav-button {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 0px;
 
   width: max-content;
   height: max-content;
@@ -42,8 +42,8 @@
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 10;
-  padding: 15px;
-  border-radius: 50%;
+  padding: 7.5px;
+
   transform: rotate(180deg);
   &:hover {
     cursor: pointer;
@@ -117,13 +117,6 @@ body[data-dark-mode="false"] .nav-button:hover {
     height: max(5px, 5px);
     position: relative;
     transition: all 0.3s;
-
-    &[data-nav-button-bar="three"] {
-      width: max(12.5px, 12.5px);
-    }
-    &[data-nav-button-bar="two"] {
-      width: max(17.5px, 17.5px);
-    }
   }
 
   .nav-menu-closing-button {
@@ -132,31 +125,15 @@ body[data-dark-mode="false"] .nav-button:hover {
 }
 @media (max-width: $medium-breakpoint) {
   .nav-button {
-    padding: 10px;
-    width: max(45px, 45px);
-
-    &[data-nav-button-bar="three"] {
-      width: max(10px, 10px);
-    }
-    &[data-nav-button-bar="two"] {
-      width: max(15px, 15px);
-    }
+    padding: 7.5px;
+    width: max(35px, 35px);
   }
   .nav-button-bar {
     height: max(3px, 3px);
+
+    width: max(100%, 100%);
   }
   .nav-menu-closing-button {
     padding: 7.5px 12.5px;
-  }
-}
-@media (max-width: $small-breakpoint) {
-  .nav-menu-closing-button {
-    padding: 5px 7.5px;
-  }
-  .nav-button {
-    padding: 10px;
-  }
-  .nav-button-bar {
-    height: max(3px, 3px);
   }
 }

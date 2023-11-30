@@ -64,21 +64,21 @@ const PortfolioPage = (): JSX.Element => {
         return (
           <>
             {index % 2 === 0 && (
-              <div className="portfolio-card-flipped">
+              <div className="portfolio-card-flipped ">
                 <img
                   className="portfolio-card-image"
                   src={entry.projectsImageUrl}
                   alt={entry.projectTitle}
                 />
 
-                <div className="portfolio-card-info-section-flipped">
-                  <p className="portfolio-card-title fs-64">
+                <div className="portfolio-card-info-section-flipped bg-primary-1000">
+                  <p className="portfolio-card-title fs-64 primary-clr-primary-000">
                     {entry.projectTitle}
                   </p>
-                  <p className="portfolio-card-description fs-20">
+                  <p className="portfolio-card-description fs-20 primary-clr-primary-000">
                     {entry.projectDescription}
                   </p>
-                  <button className="portfolio-card-more-info-button fs-20">
+                  <button className="portfolio-card-more-info-button fs-20 primary-clr-primary-000">
                     Go to
                   </button>
                 </div>
@@ -92,14 +92,14 @@ const PortfolioPage = (): JSX.Element => {
                   alt={entry.projectTitle}
                 />
 
-                <div className="portfolio-card-info-section">
-                  <p className="portfolio-card-title fs-64">
+                <div className="portfolio-card-info-section bg-primary-1000">
+                  <p className="portfolio-card-title fs-64 primary-clr-primary-000">
                     {entry.projectTitle}
                   </p>
-                  <p className="portfolio-card-description fs-20">
+                  <p className="portfolio-card-description fs-20 primary-clr-primary-000">
                     {entry.projectDescription}
                   </p>
-                  <button className="portfolio-card-more-info-button fs-20">
+                  <button className="portfolio-card-more-info-button fs-20 primary-clr-primary-000">
                     Go to
                   </button>
                 </div>

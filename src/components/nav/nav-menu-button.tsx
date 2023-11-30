@@ -8,7 +8,10 @@ const NavMenuButton = () => {
     dispatch(navStoreActions.setNavMenuAnimationDirection("in"));
   };
   return (
-    <button className="nav-button" onClick={navButtonClickHandler}>
+    <button
+      className="nav-button  bg-primary-1000"
+      onClick={navButtonClickHandler}
+    >
       <div
         data-nav-button-bar="one"
         className="nav-button-bar bg-primary-000"

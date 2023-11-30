@@ -5,20 +5,14 @@ const ContactPage = () => {
   const darkModeActive = useAppSelector((state) => state.theme.darkModeActive);
   return (
     <section className="contact-section-container bg-primary-1000">
-      <p className="section-title-text lh-82 fs-82 primary-clr-primary-000">
+      <p className="section-title-text lh-82 fs-82 clr-white-000">
         Contact{" "}
         <span className="section-title-text lh-82 fs-82 accent-clr-primary-500">
           Me
         </span>
       </p>
 
-      <div className="contact-info-container">
-        {darkModeActive && (
-          <div className="contact-section-background-blur contact-section-background-blur-black" />
-        )}
-        {!darkModeActive && (
-          <div className="contact-section-background-blur contact-section-background-blur-white" />
-        )}
+      <div className="contact-info-container bg-primary-1000">
         {contactData.map((entry) => {
           return (
             <div className="contact-info-slide">

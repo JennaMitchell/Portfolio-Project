@@ -30,7 +30,7 @@
   justify-content: center;
 }
 .about-me-description-text-container {
-  width: max(100%, 100%);
+  width: min(450px, 100%);
   height: max-content;
   display: flex;
   flex-direction: column;
@@ -115,6 +115,11 @@
   gap: 0px;
   position: relative;
   height: max-content;
+}
+
+.about-me-certifications-go-to-button {
+  align-self: flex-start;
+  text-decoration: none;
 }
 
 .about-me-courses-top-container {

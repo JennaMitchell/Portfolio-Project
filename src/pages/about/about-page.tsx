@@ -92,6 +92,12 @@ const AboutPage = (): JSX.Element => {
               <p className="fs-20 primary-clr-primary-1000">
                 Issued {data.certificationIssueDate}{" "}
               </p>
+              <a
+                className="portfolio-card-more-info-button about-me-certifications-go-to-button primary-clr-primary-1000"
+                href={data.certifcationLink}
+              >
+                Go to
+              </a>
             </div>
           </div>
         );

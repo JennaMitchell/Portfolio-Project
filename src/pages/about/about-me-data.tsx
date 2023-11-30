@@ -4,7 +4,7 @@ import FrontendMastersLogo from "../../library/assets/courses/frontend-masters-l
 import MicrosoftLogo from "../../library/assets/courses/microsoft-logo.png";
 import UiDevLogo from "../../library/assets/courses/ui-dev-logo.png";
 import Az900Image from "../../library/assets/Az-900.png";
-import Az204Image from "../../library/assets/Az-204.png";
+// import Az204Image from "../../library/assets/Az-204.png";
 // import Dp300Image from "../../library/assets/Dp-300.png";
 
 export const aboutMeCoursesData = [
@@ -215,13 +215,17 @@ export const certificationsData = [
       "This certification validates your foundational knowledge of cloud concepts in general and Azure in particular",
     certificationIssueDate: "Oct. 2023",
     certifacationImage: Az900Image,
+    certifcationLink:
+      "https://learn.microsoft.com/api/credentials/share/en-us/JennaMitchell-0160/53D472FCBAB89AEA?sharingId",
   },
   {
-    certificationTitle: "AZ-204 - Developing Solutions for Microsoft Azure",
-    certificationStatus: "In Progress",
+    certificationTitle: "DP-900 - Microsoft Azure Data Fundamentals",
+    certificationStatus: "Passed",
     certificationDescription:
-      "This certification validates , your knowledge in all phases of development, including requirements gathering, design, development, deployment, security, maintenance, performance tuning, and monitoring.",
-    certificationIssueDate: "TBD",
-    certifacationImage: Az204Image,
+      "This certification validates , the foundational knowledge of core data concepts and how they’re implemented using Azure data services.",
+    certificationIssueDate: "Nov. 2023",
+    certifacationImage: Az900Image,
+    certifcationLink:
+      "https://learn.microsoft.com/api/credentials/share/en-us/JennaMitchell-0160/B23F30549F259EE2?sharingId",
   },
 ];
