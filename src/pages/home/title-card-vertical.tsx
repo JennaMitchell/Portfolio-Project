@@ -15,21 +15,11 @@ const TitleCardVertical = (): JSX.Element => {
   const codeStackArray = ["C", "o", "d", "e", "-", "S", "t", "a", "c", "k"];
 
   const animatedTitles = useMemo(() => {
-    return [
-      "Web-Developer",
-      "Data-Scientist",
-      "Azure-Expert",
-      "Electrical-Engineer",
-    ];
+    return ["Web-Developer", "Azure-Expert", "Electrical-Engineer"];
   }, []);
 
   const animatedTitlesWithoutDash = useMemo(() => {
-    return [
-      "Web Developer",
-      "Data Scientist",
-      "Azure Expert",
-      "Electrical Engineer",
-    ];
+    return ["Web Developer", "Data Scientist", "Electrical Engineer"];
   }, []);
   const [activeAnimatedTitleIndex, setActiveAnimatedTitleIndex] = useState(0);
   const [activeAnimatedTitleLetterIndex, setActiveAnimatedTitleLetterIndex] =

@@ -1,5 +1,6 @@
 @use "../abstracts" as *;
 
+// fucntion controlling dark mode is in base > general file
 @each $color, $shade-map in $white {
   @each $shade, $value in $shade-map {
     .clr-#{$color}-#{$shade} {
