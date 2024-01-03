@@ -7,6 +7,7 @@ import EducationPage from "./about-page";
 // import ThemePulloutButton from "../../components/theme-pullout/theme-pullout-button";
 // import ThemePulloutMenu from "../../components/theme-pullout/theme-pullout-menu";
 import DarkModeButton from "../../components/dark-mode/dark-mode-button";
+
 const AboutMain = (): JSX.Element => {
   const navMenuActive = useAppSelector((state) => state.nav.navMenuActive);
 

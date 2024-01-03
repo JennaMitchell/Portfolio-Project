@@ -95,6 +95,24 @@ export const aboutMeCoursesData = [
     courseLogo: UdemyLogo,
   },
   {
+    courseTitle: "AI-900 Azure AI Fundamentals Exam Prep",
+    courseDescription:
+      "Learn the basics of Azure AI and ML services and get certified with this complete AI-900 course!",
+    courseSource: "Udemy",
+    courseLink: "https://www.udemy.com/course/ai900-azure/",
+    courseTags: ["Azure"],
+    courseLogo: UdemyLogo,
+  },
+  {
+    courseTitle: "DP-900: Azure Relational Database Administrator Exam Prep",
+    courseDescription:
+      "Learn the basics of Azure database services and get certified with this complete DP-900 course!",
+    courseSource: "Udemy",
+    courseLink: "https://www.udemy.com/course/dp900-azure/",
+    courseTags: ["Azure"],
+    courseLogo: UdemyLogo,
+  },
+  {
     courseTitle: "AZ-900: Microsoft Azure Fundamentals Exam Prep 2023",
     courseDescription:
       "Learn the fundamentals of Azure, and get certified, with this complete beginner's AZ-900 course, includes practice test!",
@@ -205,6 +223,36 @@ export const aboutMeCoursesData = [
     courseTags: ["Typescript", "React"],
     courseLogo: FrontendMastersLogo,
   },
+  {
+    courseTitle: "JavaScript - The Complete Guide 2023 (Beginner + Advanced)",
+    courseDescription:
+      "Modern JavaScript from the beginning - all the way up to JS expert level! THE must-have JavaScript resource in 2023.",
+    courseSource: "Udemy",
+    courseLink:
+      "https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/",
+    courseTags: ["Javascript"],
+    courseLogo: UdemyLogo,
+  },
+  {
+    courseTitle: "The Complete Oracle SQL Bootcamp (2024)",
+    courseDescription:
+      "Become an In-demand SQL Professional! Pass Oracle SQL 1Z0-071 (OCA) Certification Exam Confidently!",
+    courseSource: "Udemy",
+    courseLink:
+      "https://www.udemy.com/certificate/UC-6816e729-1333-4f43-8a94-f49aef5ce5b5/",
+    courseTags: ["SQL"],
+    courseLogo: UdemyLogo,
+  },
+  {
+    courseTitle: "Three.js and Typescript",
+    courseDescription:
+      "Learn Threejs, TypeScript and NodeJS to create interactive 3D content on the web.",
+    courseSource: "Udemy",
+    courseLink:
+      "https://www.udemy.com/certificate/UC-1efc781e-209a-40fa-9125-54b97b89c69f/",
+    courseTags: ["Typescript", "HTML", "CSS"],
+    courseLogo: UdemyLogo,
+  },
 ];
 
 export const certificationsData = [
@@ -227,5 +275,15 @@ export const certificationsData = [
     certifacationImage: Az900Image,
     certifcationLink:
       "https://learn.microsoft.com/api/credentials/share/en-us/JennaMitchell-0160/B23F30549F259EE2?sharingId",
+  },
+  {
+    certificationTitle: "AI-900 - Azure AI Fundamentals",
+    certificationStatus: "Passed",
+    certificationDescription:
+      "This certification validates , the foundational knowledge of common AI and machine learning workloads—and what Azure services can solve for them.",
+    certificationIssueDate: "Dec. 2023",
+    certifacationImage: Az900Image,
+    certifcationLink:
+      "https://learn.microsoft.com/api/credentials/share/en-us/JennaMitchell-0160/5B37B8745677326D?sharingId",
   },
 ];

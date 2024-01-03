@@ -40,7 +40,7 @@
 }
 
 .completed-animated-text-container {
-  width: max(18ch, 18ch);
+  width: max-content;
   height: max-content;
   background-color: transparent;
   display: flex;
@@ -53,7 +53,7 @@
 }
 
 .animated-text-container {
-  width: max(18ch, 18ch);
+  width: max-content;
   height: max-content;
   background-color: transparent;
   display: flex;
