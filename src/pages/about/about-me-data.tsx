@@ -3,7 +3,8 @@ import BeyondCssLogo from "../../library/assets/courses/beyond-css-logo.png";
 import FrontendMastersLogo from "../../library/assets/courses/frontend-masters-logo.png";
 import MicrosoftLogo from "../../library/assets/courses/microsoft-logo.png";
 import UiDevLogo from "../../library/assets/courses/ui-dev-logo.png";
-import Az900Image from "../../library/assets/Az-900.png";
+import Az900Image from "../../library/assets/icons/company/Az-900.png";
+import OracleLogo from "../../library/assets/icons/company/oracle-logo.png";
 // import Az204Image from "../../library/assets/Az-204.png";
 // import Dp300Image from "../../library/assets/Dp-300.png";
 
@@ -253,9 +254,29 @@ export const aboutMeCoursesData = [
     courseTags: ["Typescript", "HTML", "CSS"],
     courseLogo: UdemyLogo,
   },
+  {
+    courseTitle: "SocketIO v4, with websockets - the 2023 details",
+    courseDescription:
+      "Learn how to harness real-time communication on the web. W/Cluster Module, React and a real time game!",
+    courseSource: "Udemy",
+    courseLink:
+      "https://www.udemy.com/certificate/UC-4d3476fa-5c1b-4af2-8d27-2d4e4849be12/",
+    courseTags: ["React", "Socket.io", "Javascript"],
+    courseLogo: UdemyLogo,
+  },
 ];
 
 export const certificationsData = [
+  {
+    certificationTitle: "Orcale Database SQL Certified Associate",
+    certificationStatus: "Passed",
+    certificationDescription:
+      "This certification validates foundational knowledge of SQL and Oracle database roles",
+    certificationIssueDate: "Feb. 2024",
+    certifacationImage: OracleLogo,
+    certifcationLink:
+      "https://catalog-education.oracle.com/pls/certview/sharebadge?id=0DBBC42175DA4A463D0D9CE32D44C8E6CDF06E93CB62BDD7AF2D5C93CE773E62",
+  },
   {
     certificationTitle: "AZ-900 - Microsoft Azure Fundamentals",
     certificationStatus: "Passed",
