@@ -5,6 +5,8 @@ import MicrosoftLogo from "../../library/assets/courses/microsoft-logo.png";
 import UiDevLogo from "../../library/assets/courses/ui-dev-logo.png";
 import Az900Image from "../../library/assets/icons/company/Az-900.png";
 import OracleLogo from "../../library/assets/icons/company/oracle-logo.png";
+import AWSFoundations from "../../library/assets/courses/aws-foundations.png";
+
 // import Az204Image from "../../library/assets/Az-204.png";
 // import Dp300Image from "../../library/assets/Dp-300.png";
 
@@ -267,6 +269,16 @@ export const aboutMeCoursesData = [
 ];
 
 export const certificationsData = [
+  {
+    certificationTitle: "AWS Foundations",
+    certificationStatus: "Passed",
+    certificationDescription:
+      "This certification validates foundational knowledge of AWS services",
+    certificationIssueDate: "Apr. 2024",
+    certifacationImage: AWSFoundations,
+    certifcationLink:
+      "https://www.credly.com/badges/35c318e7-be13-4db5-b495-e5840d6fbf17/linked_in_profile",
+  },
   {
     certificationTitle: "Orcale Database SQL Certified Associate",
     certificationStatus: "Passed",
