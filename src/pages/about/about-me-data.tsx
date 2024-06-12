@@ -164,10 +164,37 @@ export const aboutMeCoursesData = [
   },
   {
     courseTitle: "React.gg",
-    courseDescription: "The interactive way to master modern React",
+    courseDescription: "The interactive way to master modern React.",
     courseSource: "ui.dev",
     courseLink: "https://react.gg/",
     courseTags: ["Reacts"],
+    courseLogo: UiDevLogo,
+  },
+  {
+    courseTitle: "Query.gg",
+    courseDescription:
+      "Master React Query and learn how to fetch and cache data for your React apps.",
+    courseSource: "ui.dev",
+    courseLink: "https://react.gg/",
+    courseTags: ["ReactQuery"],
+    courseLogo: UiDevLogo,
+  },
+  {
+    courseTitle: "Advanced Javascript",
+    courseDescription:
+      "Learn advanced Javascript concepts and how to use them.",
+    courseSource: "ui.dev",
+    courseLink: "https://react.gg/",
+    courseTags: ["Javascript"],
+    courseLogo: UiDevLogo,
+  },
+  {
+    courseTitle: "Redux",
+    courseDescription:
+      "Learn how to handle state for your React apps wieht the best open-source Javascript library.",
+    courseSource: "ui.dev",
+    courseLink: "https://react.gg/",
+    courseTags: ["Redux"],
     courseLogo: UiDevLogo,
   },
   {
@@ -264,6 +291,36 @@ export const aboutMeCoursesData = [
     courseLink:
       "https://www.udemy.com/certificate/UC-4d3476fa-5c1b-4af2-8d27-2d4e4849be12/",
     courseTags: ["React", "Socket.io", "Javascript"],
+    courseLogo: UdemyLogo,
+  },
+  {
+    courseTitle: "React Three Fiber",
+    courseDescription:
+      "Learn about Threejs and React using React Three Fiber and Drei",
+    courseSource: "Udemy",
+    courseLink:
+      "https://www.udemy.com/certificate/UC-6459f602-fb26-412c-8985-72806b8f634e/",
+    courseTags: ["React Three Fiber"],
+    courseLogo: UdemyLogo,
+  },
+  {
+    courseTitle: "Ultimate AWS Certified Cloud Practitioner CLF-C02",
+    courseDescription:
+      "Full Practice Exam included + explanations | Learn Cloud Computing | Pass the AWS Cloud Practitioner CLF-C02 exam!",
+    courseSource: "Udemy",
+    courseLink:
+      "https://www.udemy.com/certificate/UC-20e96354-d8c7-4699-bf6a-805e560a4337/",
+    courseTags: ["AWS"],
+    courseLogo: UdemyLogo,
+  },
+  {
+    courseTitle: "Ultimate AWS Certified Developer Associate 2024 NEW DVA-C02",
+    courseDescription:
+      "Full Practice Exam with Explanations included! PASS the Amazon Web Services Certified Developer Certification DVA-C02",
+    courseSource: "Udemy",
+    courseLink:
+      "https://www.udemy.com/certificate/UC-df9b1bbe-0a86-4a2f-a7ec-bd11fb558f53/",
+    courseTags: ["AWS"],
     courseLogo: UdemyLogo,
   },
 ];
